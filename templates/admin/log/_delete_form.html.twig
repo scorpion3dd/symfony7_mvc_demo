@@ -1,0 +1,23 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% set delete_url = ea_url({'routeName': 'log_delete', 'id': '__logId__'}) %}
+
+<form action="{{ delete_url }}" method="post" id="delete-form" style="display: none">
+    <input type="hidden" name="token" value="{{ csrf_token('ea-delete') }}" />
+</form>
+
+<div id="dialog-confirm-delete" title="{{ 'delete_modal.title'|trans([], 'EasyAdminBundle') }}">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>
+        {{ 'delete_modal.content'|trans([], 'EasyAdminBundle') }}
+    </p>
+</div>

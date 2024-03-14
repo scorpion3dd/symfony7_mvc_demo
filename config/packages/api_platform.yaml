@@ -1,0 +1,16 @@
+api_platform:
+  title: 'Simple Web Demo Free Lottery Management Application'
+  description: 'API Platform of Simple Web Demo Free Lottery Management Application'
+  version: '0.0.1'
+  # Set this to false if you want Webby to disappear.
+  show_webby: false
+  mapping:
+    paths: ['%kernel.project_dir%/src/Entity', '%kernel.project_dir%/src/Document']
+  patch_formats:
+    json: ['application/merge-patch+json']
+  swagger:
+    versions: [3]
+    api_keys:
+      Bearer:
+        name: AUTH-TOKEN
+        type: header

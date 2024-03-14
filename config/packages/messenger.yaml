@@ -1,0 +1,32 @@
+framework:
+    messenger:
+        failure_transport: failed
+        default_bus: command.bus
+        buses:
+            command.bus:
+                middleware:
+                    - doctrine_transaction
+            query.bus:
+            event.bus:
+                default_middleware: allow_no_handlers
+        transports:
+            # https://symfony.com/doc/current/messenger.html#transport-configuration
+            async:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+#                dsn: '%env(RABBITMQ_URL)%'
+                retry_strategy:
+                    max_retries: 3
+                    multiplier: 2
+            failed: 'doctrine://default?queue_name=failed'
+            # sync: 'sync://'
+
+        routing:
+            Symfony\Component\Mailer\Messenger\SendEmailMessage: async
+            Symfony\Component\Notifier\Message\ChatMessage: async
+            Symfony\Component\Notifier\Message\SmsMessage: async
+
+            # Route your messages to the transports
+            App\Message\CommentMessage: async
+            App\CQRS\Command\CreateUser\CreateUserCommand: async
+            App\CQRS\Query\FindUserByEmail\FindUserByEmailQuery: async
+            App\CQRS\Event\CreateLogEvent: async

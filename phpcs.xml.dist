@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+  ~ This file is part of the Simple Web Demo Free Lottery Management Application.
+  ~
+  ~ This project is no longer maintained.
+  ~ The project is written in Symfony Framework Release.
+  ~
+  ~ @link https://github.com/scorpion3dd
+  ~ @author Denis Puzik <scorpion3dd@gmail.com>
+  ~ @copyright Copyright (c) 2023-2024 scorpion3dd
+  -->
+<ruleset name="Symfony Framework coding standard">
+    <description>Symfony Framework coding standard</description>
+
+    <!-- display progress -->
+    <arg value="p"/>
+    <arg name="colors"/>
+    <arg name="cache" value=".phpcs-cache"/>
+    <arg name="extensions" value="php,dist,phtml"/>
+
+    <!-- inherit rules from: -->
+    <rule ref="PSR2"/>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="Generic.Formatting.SpaceAfterNot"/>
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <properties>
+            <property name="ignoreBlankLines" value="false"/>
+        </properties>
+    </rule>
+    <rule ref="PSR1.Files.SideEffects">
+        <exclude-pattern>public/index.php</exclude-pattern>
+    </rule>
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Files.LineEndings">
+        <exclude name="Generic.Files.LineEndings.InvalidEOLChar"/>
+    </rule>
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="490"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+
+    <!-- Paths to check -->
+    <file>config/</file>
+    <file>migrations/</file>
+    <file>src/</file>
+    <file>templates/</file>
+    <file>tests/</file>
+    <file>public/index.php</file>
+    <exclude-pattern>module/User/test/unit/Doctrine/</exclude-pattern>
+</ruleset>

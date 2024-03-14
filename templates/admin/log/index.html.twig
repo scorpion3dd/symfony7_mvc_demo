@@ -1,0 +1,195 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var entities \EasyCorp\Bundle\EasyAdminBundle\Collection\EntityDtoCollection #}
+{# @var paginator \EasyCorp\Bundle\EasyAdminBundle\Orm\EntityPaginator #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title %}
+    {{ 'Logs'|trans }}
+{% endblock %}
+
+{% block page_title %}
+    {{ parent() }}
+    <title>{{ 'Logs'|trans }}</title>
+{% endblock %}
+
+{% block page_actions %}
+    <a class="btn btn-primary action-new" href="{{ ea_url({'routeName': 'log_add'}) }}">{{ 'Add Log'|trans }}</a>
+{% endblock %}
+
+{% block main %}
+    <style>
+        th.sorted {
+            text-decoration: underline;
+        }
+        a.asc:before{
+            content: "\21D3 ";
+            display: inline-block;
+            font-weight: bold;
+        }
+        a.desc:before{
+            content: "\21D1 ";
+            display: inline-block;
+            font-weight: bold;
+        }
+    </style>
+    {% if pagination %}
+        <div class="count">
+            {{ 'Total count:'|trans }} {{ pagination.getTotalItemCount }}
+            {{ knp_pagination_filter(pagination, {
+                'id': 'ID'|trans({}, 'ID'),
+                'message': 'Message'|trans({}, 'Message'),
+                'priority': 'Priority'|trans({}, 'Priority'),
+                'priorityName': 'Priority name'|trans({}, 'Priority name'),
+                'extra': 'Extra'|trans({}, 'Extra'),
+                'timestamp': 'Timestamp'|trans({}, 'Timestamp'),
+            }) }}
+        </div>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+        <table class="table table-striped">
+            <tr>
+                <th{% if pagination.isSorted('id') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'ID'|trans({}, 'ID'), 'id') }}
+                </th>
+                <th{% if pagination.isSorted('message') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'Message'|trans({}, 'Message'), 'message') }}
+                </th>
+                <th{% if pagination.isSorted('priority') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'Priority'|trans({}, 'Priority'), 'priority') }}
+                </th>
+                <th{% if pagination.isSorted('priorityName') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'Priority name'|trans({}, 'Priority name'), 'priorityName') }}
+                </th>
+                <th{% if pagination.isSorted('extra') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'Extra'|trans({}, 'Extra'), 'extra') }}
+                </th>
+                <th{% if pagination.isSorted('timestamp') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'Timestamp'|trans({}, 'Timestamp'), 'timestamp') }}
+                </th>
+                <th></th>
+            </tr>
+            {% if pagination|length > 0 %}
+                {% for log in pagination %}
+                    {#                {{ dump(log) }}#}
+                    <tr>
+                        <td>
+                            <a href="{{ ea_url({'routeName': 'log_show', 'id': log.id}) }}">{{ log.id }}</a>
+                        </td>
+                        <td>{{ log.message }}</td>
+                        <td>{{ log.priority }}</td>
+                        <td>{{ log.priorityName }}</td>
+                        <td>{{ log.getExtraString() }}</td>
+                        <td><nobr>{{ log.timestamp|date("Y-m-d") }}</nobr></td>
+                        <td class="actions actions-as-dropdown">
+                            <div class="dropdown dropdown-actions">
+                                <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="21" width="21" fill="none"
+                                         viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" style="">
+                                    <a class="dropdown-item action-detail"
+                                       href="{{ ea_url({'routeName': 'log_show', 'id': log.id}) }}"
+                                       data-action-name="detail">
+                                        <span class="action-label">{{ 'Show'|trans }}</span>
+                                    </a>
+                                    <a class="dropdown-item action-edit"
+                                       href="{{ ea_url({'routeName': 'log_edit', 'id': log.id}) }}"
+                                       data-action-name="edit">
+                                        <span class="action-label">{{ 'Edit'|trans }}</span>
+                                    </a>
+                                    <a class="dropdown-item action-delete text-danger" data-log-id="{{ log.id }}"
+                                       href="{{ ea_url({'routeName': 'log_delete', 'id': log.id}) }}">
+                                        <span class="action-label">{{ 'Delete'|trans }}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="5">
+                        <div class="text-center">
+                            {{ 'No logs have been active yet for this Lottery.'|trans }}
+                        </div>
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    {% endif %}
+
+    {% block delete_form %}
+        {{ include('admin/log/_delete_form.html.twig', with_context = false) }}
+    {% endblock delete_form %}
+{% endblock %}
+
+{% block body_javascript %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        const titleLogIndex = 'javascript LogController - ';
+        console.log(titleLogIndex + 'index.html.twig');
+        $(document).ready(function() {
+            console.log(titleLogIndex + 'document ready');
+
+            $( "#dialog-confirm-delete" ).dialog({
+                autoOpen: false,
+                resizable: false,
+                height: "auto",
+                width: 400,
+                modal: true,
+                buttons: {
+                    "Delete": function() {
+                        console.log('click Delete');
+
+                        let deleteForm = $("#delete-form");
+                        console.log('deleteFormAction3 = ' + deleteForm.attr('action'));
+                        // alert(deleteForm.attr('action'));
+                        deleteForm.trigger('submit');
+
+                        $( this ).dialog( "close" );
+                    },
+                    Cancel: function() {
+                        console.log('click Cancel');
+                        $( this ).dialog( "close" );
+                    }
+                }
+            });
+
+            $('.action-delete').on('click', function(e) {
+                console.log(titleLogIndex + '.action-delete on click');
+                e.preventDefault();
+                const log_id = $(this).data('log-id');
+                console.log('log-id = ' + log_id);
+
+                let deleteFormOn = $("#delete-form");
+                console.log(deleteFormOn);
+                console.log('deleteFormAction1 = ' + deleteFormOn.attr('action'));
+                deleteFormOn.attr('action', deleteFormOn.attr('action').replace('__logId__', log_id));
+                console.log('deleteFormAction2 = ' + deleteFormOn.attr('action'));
+
+                $( "#dialog-confirm-delete" ).dialog( "open" );
+            });
+        });
+    </script>
+{% endblock %}

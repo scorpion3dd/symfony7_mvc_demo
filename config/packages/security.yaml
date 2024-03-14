@@ -1,0 +1,111 @@
+security:
+    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+    # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\Admin
+                property: username
+#        app_user_provider_api:
+#            entity:
+#                class: App\Entity\Admin
+#                property: token
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login:
+            pattern: ^/api/login
+            stateless: true
+            provider: app_user_provider
+            json_login:
+                check_path: /api/login_check
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                username_path: username
+
+        api_token_refresh:
+            pattern: ^/api/token/refresh
+            stateless: true
+            provider: app_user_provider
+            refresh_jwt: ~
+
+        api:
+            pattern: ^/api
+            lazy: true
+            stateless: true
+            provider: app_user_provider
+            jwt: ~
+
+#        api:
+#            pattern:  ^/api/
+#            lazy: true
+#            stateless: true  # since we will not use sessions
+#            provider: app_user_provider_api
+#            custom_authenticator: App\Security\ApiKeyAuthenticator
+#            jwt: ~
+#            #            entry_point: App\Security\ApiKeyAuthenticator
+#            #            access_token:
+#            #                token_handler: App\Security\AccessTokenHandler
+#            #                token_extractors: header
+
+        main:
+            pattern: ^/
+            lazy: true
+            provider: app_user_provider
+            custom_authenticator: App\Security\AppAuthenticator
+            entry_point: App\Security\AppAuthenticator
+            logout:
+                path: app_logout
+                target: app_login
+
+#        main:
+#            pattern: ^/
+#            lazy: true
+#            provider: app_user_provider
+#            custom_authenticator: App\Security\AppAuthenticator
+#            http_basic: { realm: Admin Area }
+#            entry_point: App\Security\AppAuthenticator
+#            logout:
+#                path: app_logout
+#                # where to redirect after logout
+#                # target: app_any_route
+#
+#            # activate different ways to authenticate
+#            # https://symfony.com/doc/current/security.html#the-firewall
+#
+#            # https://symfony.com/doc/current/security/impersonating_user.html
+#            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/(%app.supportedLocales%)/admin, roles: ROLE_ADMIN }
+        - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/(%app.supportedLocales%)/login, roles: PUBLIC_ACCESS }
+        - { path: ^/(%app.supportedLocales%)/registration, roles: PUBLIC_ACCESS }
+        - { path: ^/api/registration, roles: PUBLIC_ACCESS }
+        - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/token/refresh, roles: PUBLIC_ACCESS }
+        - { path: ^/api, roles: PUBLIC_ACCESS }
+        - { path: ^/api/admins, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/users, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/me, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api/logout, roles: IS_AUTHENTICATED_FULLY }
+
+when@test:
+    security:
+        password_hashers:
+            # By default, password hashers are resource intensive and take time. This is
+            # important to generate secure password hashes. In tests however, secure hashes
+            # are not important, waste resources and increase test times. The following
+            # reduces the work factor to the lowest possible values.
+            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+                algorithm: auto
+                cost: 4 # Lowest possible value for bcrypt
+                time_cost: 3 # Lowest possible value for argon
+                memory_cost: 10 # Lowest possible value for argon

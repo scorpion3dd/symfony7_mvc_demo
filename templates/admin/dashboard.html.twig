@@ -1,0 +1,59 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_title %}
+    {{ parent() }}
+    <title>{{ 'Dashboard'|trans }}</title>
+{% endblock %}
+
+{% block page_content %}
+    <style>
+        .admin_chart {
+            max-height: 400px;
+        }
+    </style>
+
+    <h1>{{ 'Dashboard'|trans }}</h1>
+    <h2>{{ 'Welcome to Admin application'|trans }}</h2>
+    <p><strong>{{ 'You have successfully enter in your Admin application!'|trans }}</strong></p>
+
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="bg-light shadow border rounded-3 p-4">
+                <canvas id="chart_users" class="admin_chart"></canvas>
+            </div>
+        </div>
+        {% if chart_comments %}
+            <div class="col-12 col-lg-6">
+                <div class="bg-light shadow border rounded-3 p-4">
+                    {{ render_chart(chart_comments, {'id': 'chart_comments', 'class': 'admin_chart'}) }}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block body_javascript %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        const titleDashboardIndex = 'dashboard.html.twig javascript - ';
+        console.log(titleDashboardIndex + 'start');
+
+        $(document).ready(function() {
+            console.log(titleDashboardIndex + 'document ready');
+        });
+    </script>
+{% endblock %}

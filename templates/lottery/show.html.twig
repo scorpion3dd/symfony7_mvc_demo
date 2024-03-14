@@ -1,0 +1,169 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'This is the Simple Web Demo Free Lottery Management Application.'|trans }} - {{ user }}
+{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('notification') %}
+        <div class="alert alert-info alert-dismissible fade show">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+    {% endfor %}
+
+    <h2 class="mb-5">
+        {{ 'User'|trans }}: {{ user.fullName }} ({{ user.username }})
+    </h2>
+
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="bg-light shadow border rounded-3 p-4">
+                <table class="table table-striped table-bordered">
+                    <tr>
+                        <th style="width: 30%">{{ 'UID'|trans }}:</th>
+                        <td style="width: 70%">{{ user.uid }}</td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Username'|trans }}:</th>
+                        <td style="width: 70%">{{ user.username }}</td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'E-mail'|trans }}:</th>
+                        <td style="width: 70%">{{ user.email }}</td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Full Name'|trans }}:</th>
+                        <td style="width: 70%">{{ user.fullName }}</td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Description'|trans }}:</th>
+                        <td style="width: 70%">{{ user.description }}</td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Date Birthday'|trans }}:</th>
+                        <td style="width: 70%"><nobr>{{ user.dateBirthday|date("Y-m-d") }}</nobr></td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Gender'|trans }}:</th>
+                        <td style="width: 70%">
+                            {% if user.gender == 1 %} {{ 'Male'|trans }} {% endif %}
+                            {% if user.gender == 2 %} {{ 'Female'|trans }} {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Access'|trans }}:</th>
+                        <td style="width: 70%">
+                            {% if user.access == 1 %} {{ 'Yes'|trans }} {% endif %}
+                            {% if user.access == 2 %} {{ 'No'|trans }} {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Status'|trans }}:</th>
+                        <td style="width: 70%">
+                            {% if user.status == 1 %} {{ 'Active'|trans }} {% endif %}
+                            {% if user.status == 2 %} {{ 'Disactive'|trans }} {% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Roles Application'|trans }}:</th>
+                        <td style="width: 70%">{{ user.getRolesAsString()|trans }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Roles Permissions'|trans }}:</th>
+                        <td style="width: 70%">{{ user.getRolePermissionsAsString()|trans }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Date created at'|trans }}:</th>
+                        <td style="width: 70%"><nobr>{{ user.createdAt|date("Y-m-d") }}</nobr></td>
+                    </tr>
+                    <tr>
+                        <th style="width: 30%">{{ 'Date updated at'|trans }}:</th>
+                        <td style="width: 70%"><nobr>{{ user.updatedAt|date("Y-m-d") }}</nobr></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-12 col-lg-3">
+            <div class="media shadow border rounded-3 p-3 mb-4">
+                {% if comments|length > 0 %}
+                    <div><b>{{ 'nb_of_comments'|trans({count: comments|length}) }}</b></div>
+                    {% if previous >= 0 %}
+                        <a class="btn btn-primary btn-sm" href="{{ path('lottery', { slug: user.slug, offset: previous }) }}">
+                            {{ 'Previous'|trans }}
+                        </a>
+                    {% endif %}
+                    {% if next < comments|length %}
+                        <a class="btn btn-primary btn-sm" href="{{ path('lottery', { slug: user.slug, offset: next }) }}">
+                            {{ 'Next'|trans }}
+                        </a>
+                    {% endif %}
+                    {% for comment in comments %}
+                        <div class="media shadow border rounded-3 p-3 mb-4">
+                            {% if comment.photofilename %}
+                                <div class="comment-img me-3">
+                                    <a href="{{ asset('uploads/photos/' ~ comment.photofilename) }}" target="_blank">
+                                        <img src="{{ asset('uploads/photos/' ~ comment.photofilename) }}"
+                                             alt="{{ comment.photofilename }}" />
+                                    </a>
+                                </div>
+                            {% endif %}
+                            <div class="media-body">
+                                <h4 class="font-weight-light mb-0">
+                                    {{ comment.author }}
+                                </h4>
+                                <div class="mb-2">
+                                    <small class="text-muted text-uppercase">
+                                        {{ comment.createdAt|format_datetime('medium', 'short') }}
+                                    </small>
+                                </div>
+                                <div class="comment-text">
+                                    {{ comment.text|nl2br }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    {% if previous >= 0 %}
+                        <a class="btn btn-primary btn-sm" href="{{ path('lottery', { slug: user.slug, offset: previous }) }}">
+                            {{ 'Previous'|trans }}
+                        </a>
+                    {% endif %}
+                    {% if comments %}
+                        {% if next < comments|length %}
+                            <a class="btn btn-primary btn-sm" href="{{ path('lottery', { slug: user.slug, offset: next }) }}">
+                                {{ 'Next'|trans }}
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                {% else %}
+                    <div class="text-center">
+                        {{ 'No comments have been posted yet for this user.'|trans }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12 col-lg-3">
+            <div class="bg-light shadow border rounded-3 p-4">
+                <h3 class="font-weight-light">
+                    {{ 'Add your comment'|trans }}
+                </h3>
+                {% if comment_form %}
+                    {{ form(comment_form) }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

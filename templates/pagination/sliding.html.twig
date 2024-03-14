@@ -1,0 +1,49 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{# default Sliding pagination control implementation #}
+{% if pageCount > 1 %}
+    <div class="pagination">
+        {% if first is defined and current != first %}
+            <span class="first">
+                <a class="btn btn-primary btn-sm" href="{{ path(route, query|merge({(pageParameterName): first})) }}">&lt;&lt;</a>
+            </span>
+        {% endif %}
+
+        {% if previous is defined %}
+            <span class="previous">
+                <a class="btn btn-primary btn-sm" rel="prev" href="{{ path(route, query|merge({(pageParameterName): previous})) }}">&lt;</a>
+            </span>
+        {% endif %}
+
+        {% for page in pagesInRange %}
+            {% if page != current %}
+                <span class="page">
+                    <a class="btn btn-secondary btn-sm" href="{{ path(route, query|merge({(pageParameterName): page})) }}">{{ page }}</a>
+                </span>
+            {% else %}
+                <span class="current btn btn-outline-secondary btn-sm disabled" aria-disabled="true">{{ page }}</span>
+            {% endif %}
+        {% endfor %}
+
+        {% if next is defined %}
+            <span class="next">
+                <a class="btn btn-primary btn-sm" rel="next" href="{{ path(route, query|merge({(pageParameterName): next})) }}">&gt;</a>
+            </span>
+        {% endif %}
+
+        {% if last is defined and current != last %}
+            <span class="last">
+                <a class="btn btn-primary btn-sm" href="{{ path(route, query|merge({(pageParameterName): last})) }}">&gt;&gt;</a>
+            </span>
+        {% endif %}
+    </div>
+{% endif %}

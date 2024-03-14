@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+  ~ This file is part of the Simple Web Demo Free Lottery Management Application.
+  ~
+  ~ This project is no longer maintained.
+  ~ The project is written in Symfony Framework Release.
+  ~
+  ~ @link https://github.com/scorpion3dd
+  ~ @author Denis Puzik <scorpion3dd@gmail.com>
+  ~ @copyright Copyright (c) 2023-2024 scorpion3dd
+  -->
+<psalm
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd">
+    <projectFiles>
+        <directory name="src" />
+        <directory name="migrations" />
+        <directory name="templates" />
+        <directory name="config" />
+        <file name="public/index.php" />
+        <ignoreFiles>
+            <directory name="vendor" />
+            <directory name="bin" />
+        </ignoreFiles>
+    </projectFiles>
+    <issueHandlers>
+        <RiskyTruthyFalsyComparison errorLevel="info" />
+        <ImplementedReturnTypeMismatch errorLevel="info" />
+        <PossiblyUnusedReturnValue errorLevel="info" />
+        <PossiblyUnusedMethod errorLevel="info" />
+        <UndefinedDocblockClass errorLevel="info" />
+        <UnusedClass errorLevel="info" />
+        <UnusedVariable errorLevel="info" />
+        <UnusedProperty errorLevel="info" />
+        <MissingConstructor errorLevel="info" />
+        <PossiblyUnusedProperty errorLevel="info" />
+        <UnnecessaryVarAnnotation errorLevel="info" />
+        <PossiblyUnusedParam errorLevel="info" />
+    </issueHandlers>
+</psalm>

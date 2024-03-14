@@ -1,0 +1,526 @@
+{
+    "name": "symfony-demo/simple-application-free-lottery-symfony-mvc-skeleton",
+    "description": "Simple Web Demo Free Lottery Management Application by Symfony Framework MVC Skeleton Application",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "symfony",
+        "mvc",
+        "skeleton",
+        "framework"
+    ],
+    "homepage": "https://github.com/scorpion3dd/",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.2",
+        "ext-amqp": "*",
+        "ext-ctype": "*",
+        "ext-gd": "*",
+        "ext-iconv": "*",
+        "ext-intl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-mongodb": "*",
+        "ext-pdo": "*",
+        "ext-redis": "*",
+        "ext-xmlwriter": "*",
+        "ext-fileinfo": "*",
+        "api-platform/core": "*",
+        "beberlei/doctrineextensions": "*",
+        "blackfire/php-sdk": "*",
+        "blackfireio/blackfire-symfony-meta": "*",
+        "doctrine/annotations": "*",
+        "doctrine/doctrine-bundle": "*",
+        "doctrine/doctrine-migrations-bundle": "*",
+        "doctrine/mongodb-odm": "*",
+        "doctrine/mongodb-odm-bundle": "*",
+        "doctrine/orm": "*",
+        "easycorp/easyadmin-bundle": "*",
+        "fakerphp/faker": "*",
+        "gesdinet/jwt-refresh-token-bundle": "*",
+        "imagine/imagine": "*",
+        "knplabs/knp-paginator-bundle": "*",
+        "lexik/jwt-authentication-bundle": "*",
+        "nelmio/cors-bundle": "*",
+        "nesbot/carbon": "*",
+        "phpdocumentor/reflection-docblock": "*",
+        "phpstan/phpdoc-parser": "*",
+        "sendgrid/sendgrid": "*",
+        "sensio/framework-extra-bundle": "*",
+        "symfony/amqp-messenger": "*",
+        "symfony/asset": "*",
+        "symfony/console": "*",
+        "symfony/doctrine-messenger": "*",
+        "symfony/dotenv": "*",
+        "symfony/expression-language": "*",
+        "symfony/flex": "*",
+        "symfony/form": "*",
+        "symfony/framework-bundle": "*",
+        "symfony/google-mailer": "*",
+        "symfony/http-client": "*",
+        "symfony/intl": "*",
+        "symfony/mailer": "*",
+        "symfony/mime": "*",
+        "symfony/monolog-bundle": "*",
+        "symfony/notifier": "*",
+        "symfony/process": "*",
+        "symfony/property-access": "*",
+        "symfony/property-info": "*",
+        "symfony/runtime": "*",
+        "symfony/security-bundle": "*",
+        "symfony/sendgrid-mailer": "*",
+        "symfony/serializer": "*",
+        "symfony/slack-notifier": "*",
+        "symfony/string": "*",
+        "symfony/translation": "*",
+        "symfony/twig-bundle": "*",
+        "symfony/ux-chartjs": "*",
+        "symfony/validator": "*",
+        "symfony/web-link": "*",
+        "symfony/webpack-encore-bundle": "*",
+        "symfony/workflow": "*",
+        "symfony/yaml": "*",
+        "symfonycorp/platformsh-meta": "*",
+        "twig/cssinliner-extra": "*",
+        "twig/extra-bundle": "*",
+        "twig/inky-extra": "*",
+        "twig/intl-extra": "*",
+        "twig/string-extra": "*",
+        "twig/twig": "*",
+        "vich/uploader-bundle": "*",
+        "webonyx/graphql-php": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php81": "*"
+    },
+    "scripts": {
+        "symfony-server-start": "symfony server:start -d",
+        "symfony-server-open-local": "symfony open:local",
+        "symfony-server-log": "symfony server:log",
+        "symfony-server-status": "symfony server:status",
+        "symfony-server-stop": "symfony server:stop",
+        "symfony-webmail-open": "symfony open:local:webmail --ansi",
+        "symfony-var-export": "symfony var:export --ansi",
+        "printenv": "printenv",
+
+        "npm-install": [
+            "Composer\\Config::disableProcessTimeout",
+            "npm install --ansi",
+            "npm install sass --save-dev --ansi",
+            "npm install node-sass sass-loader --save-dev --ansi",
+            "npm install bootstrap @popperjs/core bs-custom-file-input --save-dev --ansi",
+            "npm audit fix --ansi",
+            "node -v"
+        ],
+        "symfony-npm-ci": "symfony run npm ci --ansi",
+        "symfony-npm-run-dev": "symfony run npm run dev --ansi",
+        "symfony-npm-run-dev-d": "symfony run -d npm run watch --ansi",
+
+        "outdated": "@outdated",
+        "console-about": "php bin/console about --ansi",
+        "list-console": "php bin/console list --ansi",
+        "list-routers": "php bin/console debug:router --ansi",
+        "list-make": "symfony console list make --ansi",
+
+        "list-containers": "php bin/console debug:container --ansi",
+        "list-containers-workflow": "php bin/console debug:container workflow --ansi",
+        "list-containers-state_machine": "php bin/console debug:container state_machine.comment --ansi",
+        "list-containers-hidden": "php bin/console debug:container --show-hidden --ansi",
+        "list-containers-autowiring": "php bin/console debug:autowiring --ansi",
+        "list-containers-autowiring-workflow": "php bin/console debug:autowiring workflow --ansi",
+
+        "list-containers-tag": "php bin/console debug:container --tag=kernel.event_listener --ansi",
+        "service-CommentMessageHandler": "php bin/console debug:container App\\MessageHandler\\CommentMessageHandler --ansi",
+        "service-CommentMessageHandler-arguments": "php bin/console debug:container App\\MessageHandler\\CommentMessageHandler --show-arguments --ansi",
+
+
+        "messenger-consume-async": "symfony console messenger:consume async -vv --ansi",
+        "messenger-consume-async-d": "symfony run -d --watch=config,src,templates,vendor symfony console messenger:consume async -vv --ansi",
+        "messenger-failed-show": "symfony console messenger:failed:show --ansi",
+        "messenger-failed-retry": "symfony console messenger:failed:retry --ansi",
+        "messenger-list-handlers": "php bin/console debug:messenger --ansi",
+
+        "messenger-console-users-create-faker-user": "php bin/console app:users:create-faker-user --ansi",
+        "messenger-console-comment-message": "php bin/console app:comment:message --ansi",
+        "messenger-symfony-comment-message": "symfony console app:comment:message --ansi",
+
+        "symfony-users-find-user-by-email-async": "symfony console app:users:find-user-by-email-async --ansi",
+        "symfony-users-find-user-by-email-sync": "symfony console app:users:find-user-by-email-sync --ansi",
+        "symfony-step-info": "symfony console app:step:info --ansi",
+        "symfony-comment-cleanup": "symfony console app:comment:cleanup --ansi",
+
+        "symfony-game-snake": "symfony console app:game:snake --ansi",
+
+
+        "check-cs": "phpcs",
+        "check-cs-coverage": "phpcs > var/check/cs/phpcs.html || true",
+        "check-cs-fix": "phpcbf",
+
+        "check-psalm": "vendor/bin/psalm",
+        "check-psalm-clear-cache": "vendor/bin/psalm --clear-cache",
+        "check-psalm-coverage": "vendor/bin/psalm --output-format=xml | xsltproc vendor/roave/psalm-html-output/psalm-html-output.xsl - > var/check/psalm/psalm-report.html || true",
+
+        "check-phpmd": "vendor/bin/phpmd src/ text phpmd_ruleset.xml --suffixes php,phtml.twig --strict --color",
+        "check-phpmd-coverage": "vendor/bin/phpmd src/ html phpmd_ruleset.xml --reportfile var/check/md/phpmd.html --suffixes php,phtml.twig --strict --color || true",
+
+        "check-stan": "phpstan analyse --level=7 --memory-limit=1024M --xdebug --ansi",
+        "check-stan-clear-cache": "phpstan clear-result-cache --ansi",
+        "check-stan-coverage": "phpstan analyse --xdebug --level=7 --memory-limit=1024M --error-format=json > var/check/stan/phpstan.json || true",
+
+        "check-phpunit-vendor-version": "php vendor/phpunit/phpunit/phpunit --version --colors=always",
+        "check-phpunit-vendor": "php vendor/phpunit/phpunit/phpunit --no-coverage --colors=always",
+        "check-phpunit-bin": "php bin/phpunit --no-coverage --colors=always",
+        "check-phpunit-bin2": "php bin/phpunit2 --no-coverage --colors=always",
+
+        "check-phpunit-migrate": "php bin/phpunit --migrate-configuration",
+        "check-phpunit-coverage": "php bin/phpunit --colors=always || true",
+
+        "check-phpunit-filter": "php bin/phpunit --testsuite=Unit --filter testValidate --no-coverage --colors=always",
+        "check-phpunit-filter-dir": "php bin/phpunit --testsuite=Unit --filter 'Util' --colors=always --no-coverage --testdox",
+        "check-phpunit-filter-dir-coverage-all": "php bin/phpunit --testsuite=Unit --filter 'Util' --colors=always --testdox  --coverage-clover ./var/check/tests/unit/phpunit.clover.xml --log-junit ./var/check/tests/unit/phpunit.results.xml --coverage-cobertura ./var/check/tests/unit/cobertura.xml --coverage-crap4j ./var/check/tests/unit/crap4j.xml --coverage-php ./var/check/tests/unit/coverage.php --coverage-html ./var/check/tests/unit --coverage-xml ./var/check/tests/unit/xml-coverage",
+        "check-phpunit-filter-dir-coverage-clover": "php bin/phpunit --testsuite=Unit --filter 'Util' --colors=always --testdox --coverage-clover ./var/check/tests/unit/phpunit.clover.xml --log-junit ./var/check/tests/unit/phpunit.results.xml",
+        "check-phpunit-filter-dir-coverage-cobertura": "php bin/phpunit --testsuite=Unit --filter 'Util' --colors=always --testdox --coverage-cobertura ./var/check/tests/unit/cobertura.xml",
+        "check-phpunit-filter-dir-coverage-crap4j": "php bin/phpunit --testsuite=Unit --filter 'Util' --colors=always --testdox --coverage-crap4j ./var/check/tests/unit/crap4j.xml",
+        "check-phpunit-filter-dir-coverage-php": "php bin/phpunit --testsuite=Unit --filter 'Util' --colors=always --testdox --coverage-php ./var/check/tests/unit/coverage.php",
+        "check-phpunit-filter-dir-coverage-html": "php bin/phpunit --testsuite=Unit --filter 'Util' --colors=always --testdox --coverage-html ./var/check/tests/unit",
+        "check-phpunit-filter-dir-coverage-xml": "php bin/phpunit --testsuite=Unit --filter 'Util' --colors=always --testdox --coverage-xml ./var/check/tests/unit/xml-coverage",
+
+        "check-phpunit-list-suites": "php bin/phpunit --list-suites",
+
+        "check-phpunit-unit-no-coverage": [
+            "Composer\\Config::disableProcessTimeout",
+            "php bin/phpunit --testsuite=Unit --no-coverage --configuration=/var/www/back/phpunit.xml --colors=always"
+        ],
+        "check-phpunit-unit-coverage-html": [
+            "Composer\\Config::disableProcessTimeout",
+            "php bin/phpunit --testsuite=Unit --colors=always  --coverage-html ./var/check/tests/unit"
+        ],
+        "check-phpunit-unit-coverage-clover": [
+            "Composer\\Config::disableProcessTimeout",
+            "php bin/phpunit --testsuite=Unit --colors=always  --coverage-clover ./var/check/tests/unit/phpunit.clover.xml --log-junit ./var/check/tests/unit/phpunit.results.xml"
+        ],
+
+        "check-phpunit-unit-admin-no-coverage": "php bin/phpunit --testsuite=UnitAdmin --colors=always --no-coverage",
+        "check-phpunit-unit-admin-coverage-html": "php bin/phpunit --testsuite=UnitAdmin --colors=always  --coverage-html ./var/check/tests/unit-admin",
+        "check-phpunit-unit-admin-coverage-clover": "php bin/phpunit --testsuite=UnitAdmin --colors=always  --coverage-clover ./var/check/tests/unit-admin/phpunit.clover.xml --log-junit ./var/check/tests/unit-admin/phpunit.results.xml",
+
+
+        "check-phpunit-unit-admin-form-no-coverage": "php bin/phpunit --testsuite=UnitAdminForm --colors=always --no-coverage",
+        "check-phpunit-unit-admin-form-coverage-html": "php bin/phpunit --testsuite=UnitAdminForm --colors=always  --coverage-html ./var/check/tests/unit-admin-form",
+        "check-phpunit-unit-admin-form-coverage-clover": "php bin/phpunit --testsuite=UnitAdminForm --colors=always  --coverage-clover ./var/check/tests/unit-admin-form/phpunit.clover.xml --log-junit ./var/check/tests/unit-admin-form/phpunit.results.xml",
+
+
+        "check-phpunit-integration-no-coverage": [
+            "Composer\\Config::disableProcessTimeout",
+            "php bin/phpunit --testsuite=Integration --colors=always --no-coverage"
+        ],
+        "check-phpunit-integration-coverage-html": [
+            "Composer\\Config::disableProcessTimeout",
+            "php bin/phpunit --testsuite=Integration --colors=always  --coverage-html ./var/check/tests/integration"
+        ],
+        "check-phpunit-integration-coverage-clover": [
+            "Composer\\Config::disableProcessTimeout",
+            "php bin/phpunit --testsuite=Integration --colors=always  --coverage-clover ./var/check/tests/integration/phpunit.clover.xml --log-junit ./var/check/tests/integration/phpunit.results.xml"
+        ],
+
+
+        "check-phpunit-functional-no-coverage": [
+            "Composer\\Config::disableProcessTimeout",
+            "php bin/phpunit --testsuite=Functional --colors=always --no-coverage"
+        ],
+        "check-phpunit-functional-coverage-html": [
+            "Composer\\Config::disableProcessTimeout",
+            "php bin/phpunit --testsuite=Functional --colors=always  --coverage-html ./var/check/tests/functional"
+        ],
+        "check-phpunit-functional-coverage-clover": [
+            "Composer\\Config::disableProcessTimeout",
+            "php bin/phpunit --testsuite=Functional --colors=always  --coverage-clover ./var/check/tests/functional/phpunit.clover.xml --log-junit ./var/check/tests/functional/phpunit.results.xml"
+        ],
+
+
+        "check-phpunit-all-no-coverage": [
+            "Composer\\Config::disableProcessTimeout",
+            "@check-phpunit-unit-no-coverage",
+            "@check-phpunit-unit-admin-no-coverage",
+            "@check-phpunit-unit-admin-form-no-coverage",
+            "@check-phpunit-integration-no-coverage",
+            "@check-phpunit-functional-no-coverage"
+        ],
+        "check-phpunit-all-coverage-html": [
+            "Composer\\Config::disableProcessTimeout",
+            "@check-phpunit-unit-coverage-html",
+            "@check-phpunit-unit-admin-coverage-html",
+            "@check-phpunit-unit-admin-form-coverage-html",
+            "@check-phpunit-integration-coverage-html",
+            "@check-phpunit-functional-coverage-html"
+        ],
+        "check-phpunit-all-coverage-clover": [
+            "Composer\\Config::disableProcessTimeout",
+            "@check-phpunit-unit-coverage-clover",
+            "@check-phpunit-unit-admin-coverage-clover",
+            "@check-phpunit-unit-admin-form-coverage-clover",
+            "@check-phpunit-integration-coverage-clover",
+            "@check-phpunit-functional-coverage-clover"
+        ],
+
+
+        "check-project": [
+            "Composer\\Config::disableProcessTimeout",
+            "@check-cs",
+            "@check-stan",
+            "@check-psalm",
+            "@check-phpmd",
+            "@check-phpunit-unit-no-coverage",
+            "@check-phpunit-unit-admin-no-coverage",
+            "@check-phpunit-unit-admin-form-no-coverage",
+            "@check-phpunit-integration-no-coverage",
+            "@check-phpunit-functional-no-coverage"
+        ],
+
+        "check-project-clear-cache": [
+            "Composer\\Config::disableProcessTimeout",
+            "@cache-clear-dev",
+            "@check-cs",
+            "@check-stan-clear-cache",
+            "@check-stan",
+            "@check-psalm-clear-cache",
+            "@check-psalm",
+            "@check-phpmd",
+            "@cache-clear-test",
+            "@check-phpunit-unit-no-coverage",
+            "@check-phpunit-unit-admin-no-coverage",
+            "@check-phpunit-unit-admin-form-no-coverage",
+            "@check-phpunit-integration-no-coverage",
+            "@check-phpunit-functional-no-coverage"
+        ],
+
+
+        "check-project-coverage": [
+            "Composer\\Config::disableProcessTimeout",
+            "@check-cs-coverage",
+            "@check-stan-coverage",
+            "@check-psalm-coverage",
+            "@check-phpmd-coverage",
+            "@check-phpunit-unit-coverage-html",
+            "@check-phpunit-unit-admin-coverage-html",
+            "@check-phpunit-unit-admin-form-coverage-html",
+            "@check-phpunit-integration-coverage-html",
+            "@check-phpunit-functional-coverage-html",
+            "@openapi-export"
+        ],
+
+        "check-project-coverage-clear-cache": [
+            "Composer\\Config::disableProcessTimeout",
+            "@cache-clear-dev",
+            "@check-cs-coverage",
+            "@check-stan-clear-cache",
+            "@check-stan-coverage",
+            "@check-psalm-clear-cache",
+            "@check-psalm-coverage",
+            "@check-phpmd-coverage",
+            "@cache-clear-test",
+            "@check-phpunit-unit-coverage-html",
+            "@check-phpunit-unit-admin-coverage-html",
+            "@check-phpunit-unit-admin-form-coverage-html",
+            "@check-phpunit-unit-coverage-clover",
+            "@check-phpunit-unit-admin-coverage-clover",
+            "@check-phpunit-unit-admin-form-coverage-clover",
+            "@check-phpunit-integration-coverage-html",
+            "@check-phpunit-integration-coverage-clover",
+            "@check-phpunit-functional-coverage-html",
+            "@check-phpunit-functional-coverage-clover",
+            "@openapi-export"
+        ],
+
+
+        "admin-dashboard-make": "symfony console make:admin:dashboard --ansi",
+        "admin-crud-make": "symfony console make:admin:crud --ansi",
+
+        "migration-make": "symfony console make:migration --ansi",
+
+        "doctrine-db-drop-dev": "symfony console doctrine:database:drop --force --env=dev --ansi",
+        "doctrine-db-drop-test": "symfony console doctrine:database:drop --force --env=test --ansi",
+
+        "doctrine-schema-drop-dev": "php bin/console doctrine:schema:drop --force --env=dev --ansi",
+        "doctrine-schema-drop-test": "php bin/console doctrine:schema:drop --force --env=test --ansi",
+
+        "doctrine-db-create-dev": "symfony console doctrine:database:create --env=dev --ansi",
+        "doctrine-db-create-test": "symfony console doctrine:database:create --env=test --ansi",
+
+        "migrations-generate": "symfony console doctrine:migrations:generate --no-interaction --ansi",
+
+        "migrations-diff-dev": "symfony console doctrine:migrations:diff --env=dev --no-interaction --ansi",
+        "migrations-diff-test": "symfony console doctrine:migrations:diff --env=test --no-interaction --ansi",
+
+        "migrations-migrate-dev": "symfony console doctrine:migrations:migrate --no-interaction --env=dev --ansi",
+        "migrations-migrate-test": "symfony console doctrine:migrations:migrate --no-interaction --env=test --ansi",
+
+        "doctrine-schema-validate-dev": "symfony console doctrine:schema:validate --skip-sync --env=dev --ansi",
+        "doctrine-mapping-info-dev": "symfony console doctrine:mapping:info --env=dev --ansi",
+
+        "doctrine-schema-validate-test": "symfony console doctrine:schema:validate --skip-sync --env=test --ansi",
+        "doctrine-mapping-info-test": "symfony console doctrine:mapping:info --env=test --ansi",
+
+        "doctrine-mongodb-fixtures-load-dev": [
+            "symfony console doctrine:mongodb:fixtures:load --no-interaction --env=dev --ansi",
+            "@cache-chown-www-mongodb"
+        ],
+        "doctrine-mongodb-fixtures-load-test": [
+            "symfony console doctrine:mongodb:fixtures:load --no-interaction --env=test --ansi",
+            "@cache-chown-www-mongodb"
+        ],
+        "doctrine-db-fixtures-load-dev": [
+            "symfony console doctrine:fixtures:load --no-interaction --env=dev --ansi",
+            "@cache-chown-www-mongodb"
+        ],
+        "doctrine-db-fixtures-load-test": [
+            "symfony console doctrine:fixtures:load --no-interaction --env=test --ansi",
+            "@cache-chown-www-mongodb"
+        ],
+
+        "doctrine-mongodb-generate-hydrators-dev": "symfony console doctrine:mongodb:generate:hydrators --env=dev --ansi",
+        "doctrine-mongodb-generate-hydrators-test": "symfony console doctrine:mongodb:generate:hydrators --env=test --ansi",
+
+        "db-migrate-dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "@cache-clear-dev",
+            "@migrations-migrate-dev"
+        ],
+
+        "project-create-dev": [
+            "@db-migrate-dev",
+            "@doctrine-mongodb-fixtures-load-dev",
+            "@doctrine-db-fixtures-load-dev"
+        ],
+
+        "db-refresh-dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "@cache-clear-dev",
+            "@doctrine-db-drop-dev",
+            "@doctrine-db-create-dev",
+            "@migrations-migrate-dev"
+        ],
+
+        "project-refresh-dev": [
+            "@db-refresh-dev",
+            "@doctrine-mongodb-fixtures-load-dev",
+            "@doctrine-db-fixtures-load-dev"
+        ],
+
+
+
+        "db-migrate-test": [
+            "Composer\\Config::disableProcessTimeout",
+            "@cache-clear-test",
+            "@migrations-migrate-test"
+        ],
+
+        "project-create-test": [
+            "@db-migrate-test",
+            "@doctrine-mongodb-fixtures-load-test",
+            "@doctrine-db-fixtures-load-test"
+        ],
+
+        "db-refresh-test": [
+            "Composer\\Config::disableProcessTimeout",
+            "@cache-clear-test",
+            "@doctrine-db-drop-test",
+            "@doctrine-db-create-test",
+            "@migrations-migrate-test"
+        ],
+
+        "project-refresh-test": [
+            "@db-refresh-test",
+            "@doctrine-mongodb-fixtures-load-test",
+            "@doctrine-db-fixtures-load-test"
+        ],
+
+
+        "openapi-export": "php bin/console api:openapi:export --output=./var/api/swagger_docs.json --ansi",
+
+        "cache-clear-dev": "php bin/console cache:clear --env=dev --no-warmup --ansi",
+        "cache-clear-test": "php bin/console cache:clear --env=test --no-warmup --ansi",
+
+        "cache-ls-la-tests-unit-helper": "ls -la /var/www/back/tests/Unit/data/Helper/ImageOptimizer",
+        "cache-ls-la-mongodb": "ls -la /var/www/back/var/cache/dev/doctrine/odm/mongodb",
+        "cache-chown-www-mongodb": "chown -R www-data:www-data ./var/cache/dev/doctrine/odm/mongodb",
+
+        "cache-ls-la-orm": "ls -la /var/www/back/var/cache/dev/doctrine/orm",
+        "cache-chown-www-orm": "chown -R www-data:www-data ./var/cache/dev/doctrine/orm",
+
+        "ls-la-project_init_sh": "ls -la project_init.sh",
+        "chmod-project_init_sh": "chmod +x project_init.sh",
+
+        "jwt-generate-keypair": "php bin/console lexik:jwt:generate-keypair --overwrite",
+        "jwt-revoke": "php bin/console gesdinet:jwt:revoke TOKEN",
+
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": "true",
+            "require": "*",
+            "docker": true
+        }
+    },
+    "require-dev": {
+        "ext-curl": "*",
+        "dama/doctrine-test-bundle": "*",
+        "dg/bypass-finals": "*",
+        "doctrine/doctrine-fixtures-bundle": "*",
+        "phpmd/phpmd": "*",
+        "phpstan/phpstan": "*",
+        "phpstan/phpstan-doctrine": "*",
+        "phpstan/phpstan-phpunit": "*",
+        "phpunit/php-code-coverage": "*",
+        "phpunit/php-invoker": "*",
+        "phpunit/phpunit": "*",
+        "roave/psalm-html-output": "*",
+        "squizlabs/php_codesniffer": "*",
+        "symfony/browser-kit": "*",
+        "symfony/css-selector": "*",
+        "symfony/debug-bundle": "*",
+        "symfony/maker-bundle": "*",
+        "symfony/panther": "*",
+        "symfony/phpunit-bridge": "*",
+        "symfony/stopwatch": "*",
+        "symfony/web-profiler-bundle": "*",
+        "vimeo/psalm": "*"
+    }
+}

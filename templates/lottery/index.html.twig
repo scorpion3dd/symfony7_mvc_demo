@@ -1,0 +1,89 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'This is the Simple Web Demo Free Lottery Management Application.'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {{ render_esi(path('lottery_header')) }}
+    </div>
+    {% if pagination %}
+        <div class="count">
+            {{ 'Total count:'|trans }} {{ pagination.getTotalItemCount }}
+            {{ knp_pagination_filter(pagination, {
+                'u.uid': 'UID'|trans({}, 'UID'),
+                'u.email': 'E-mail'|trans({}, 'E-mail'),
+                'u.fullName': 'Full Name'|trans({}, 'Full Name'),
+                'u.gender': 'Gender'|trans({}, 'Gender'),
+            }) }}
+        </div>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+        <table class="table table-striped">
+            <tr>
+                <th{% if pagination.isSorted('u.uid') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'UID'|trans({}, 'UID'), 'u.uid') }}
+                </th>
+                <th{% if pagination.isSorted('u.email') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'E-mail'|trans({}, 'E-mail'), 'u.email') }}
+                </th>
+                <th{% if pagination.isSorted('u.fullName') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'Full Name'|trans({}, 'Full Name'), 'u.fullName') }}
+                </th>
+                <th{% if pagination.isSorted('u.dateBirthday') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'Date Birthday'|trans({}, 'Date Birthday'), 'u.dateBirthday') }}
+                </th>
+                <th{% if pagination.isSorted('u.gender') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'Gender'|trans({}, 'Gender'), 'u.gender') }}
+                </th>
+                <th{% if pagination.isSorted('u.commentsCount') %} class="sorted"{% endif %}>
+                    {{ knp_pagination_sortable(pagination, 'Comments count'|trans({}, 'Comments count'), 'u.commentsCount') }}
+                </th>
+            </tr>
+            {% if pagination|length > 0 %}
+                {% for user in pagination %}
+                    {#                {{ dump(user) }}#}
+                    <tr>
+                        <td>
+                            <a class="link" href="{{ path('lottery', { slug: user.slug }) }}">
+                                {{ user.uid }}
+                            </a>
+                        </td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.fullName }}</td>
+                        <td><nobr>{{ user.dateBirthday|date("Y-m-d") }}</nobr></td>
+                        <td>
+                            {% if user.gender == 1 %} {{ 'Male'|trans }} {% endif %}
+                            {% if user.gender == 2 %} {{ 'Female'|trans }} {% endif %}
+                        </td>
+                        <td>{{ user.commentsCount }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="5">
+                        <div class="text-center">
+                            {{ 'No users have been active yet for this Lottery.'|trans }}
+                        </div>
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,44 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+services:
+  # redefine the alias to what it should be, making it public
+  App\Security\UserFetcherInterface:
+    alias: App\Security\UserFetcher
+    public: true
+
+  App\Service\UserServiceInterface:
+    alias: App\Service\UserService
+    public: true
+
+  App\Service\CommentServiceInterface:
+    alias: App\Service\CommentService
+    public: true
+
+  App\Repository\UserRepositoryInterface:
+    alias: App\Repository\UserRepository
+    public: true
+
+  App\Repository\AdminRepositoryInterface:
+    alias: App\Repository\AdminRepository
+    public: true
+
+  App\Repository\CommentRepositoryInterface:
+    alias: App\Repository\CommentRepository
+    public: true
+
+  App\Repository\LogRepositoryInterface:
+    alias: App\Repository\LogRepository
+    public: true
+
+  App\Service\LogServiceInterface:
+    alias: App\Service\LogService
+    public: true
+
+  Symfony\Component\Form\FormFactoryInterface:
+    public: true
+
+  Symfony\Component\HttpKernel\HttpCache\StoreInterface:
+    public: true

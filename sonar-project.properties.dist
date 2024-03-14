@@ -1,0 +1,44 @@
+# This file is part of the Simple Web Demo Free Lottery Management Application.
+#
+# This project is no longer maintained.
+# The project is written in Symfony Framework Release.
+#
+# @link https://github.com/scorpion3dd
+# @author Denis Puzik <scorpion3dd@gmail.com>
+# @copyright Copyright (c) 2023-2024 scorpion3dd
+#
+# must be unique in a given SonarQube instance
+
+
+# --- optional properties ---
+
+# defaults to project key
+sonar.projectKey=DemoSymfonyMvcFreeLotteryApplication
+sonar.projectName=Simple Web Demo Free Lottery Management Application on Symfony MVC Framework
+sonar.Description=The Simple web demo "Free Lottery" management application project on Symfony MVC Framework is a demo
+sonar.links.homepage=http://symfony6.learn.os
+sonar.links.scm=https://bitbucket.org/3dscorpion7/docker-symfony6-learn/src/master/
+
+sonar.login=squ_466dd9d46b9f10df4ece708218f591b4fd7358bf
+
+# defaults to 'not provided'
+sonar.projectVersion=1.0
+
+# Path is relative to the sonar-project.properties file. Defaults to .
+sonar.sources=src
+sonar.tests=tests
+
+sonar.language=php
+sonar.dynamicAnalysis=false
+
+# Encoding of the source code. Default is default system encoding
+sonar.sourceEncoding=UTF-8
+
+sonar.php.coverage.reportPaths = var/check/tests/unit/phpunit.clover.xml
+sonar.php.tests.reportPath = var/check/tests/unit/phpunit.results.xml
+
+sonar.test = tests/*
+sonar.php.phpstan.reportPaths = var/check/stan/phpstan.json
+
+sonar.exclusions = tests/*
+sonar.inclusions=**/*.php

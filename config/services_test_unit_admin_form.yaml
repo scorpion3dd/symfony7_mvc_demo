@@ -1,0 +1,29 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+services:
+  # redefine the alias to what it should be, making it public
+  App\Repository\UserRepositoryInterface:
+    alias: App\Repository\UserRepository
+    public: true
+
+  App\Repository\RoleRepositoryInterface:
+    alias: App\Repository\RoleRepository
+    public: true
+
+  App\Repository\PermissionRepositoryInterface:
+    alias: App\Repository\PermissionRepository
+    public: true
+
+  App\Repository\CommentRepositoryInterface:
+    alias: App\Repository\CommentRepository
+    public: true
+
+  App\Repository\AdminRepositoryInterface:
+    alias: App\Repository\AdminRepository
+    public: true
+
+  EasyCorp\Bundle\EasyAdminBundle\Factory\FormFactory:
+    public: true

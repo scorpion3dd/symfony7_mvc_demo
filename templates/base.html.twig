@@ -1,0 +1,100 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>{% block title %}{{ 'Welcome!'|trans }}{% endblock %}</title>
+
+        {% block stylesheets %}
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,500i,600,600i&display=swap" rel="stylesheet" />
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="visually-hidden">
+                {{ 'This is the Simple Web Demo Free Lottery Management Application.'|trans }}
+            </h1>
+
+            <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand me-4 pr-2" href="{{ path('homepage') }}">
+                        <div class="app-caption">
+                            &#128223; {{ 'This is the Simple Web Demo Free Lottery Management Application.'|trans }}
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#header-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Show/Hide navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="header-menu">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item me-3">
+                                <a class="nav-link" href="{{ path('homepage') }}">
+                                    {{ 'Home'|trans }}
+                                </a>
+                            </li>
+                            <li class="nav-item me-3">
+                                <a class="nav-link" href="{{ path('about') }}">
+                                    {{ 'About'|trans }}
+                                </a>
+                            </li>
+                            <li class="nav-item me-3">
+                                <a class="nav-link" href="{{ path('admin') }}">
+                                    {{ 'Admin'|trans }}
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown-language" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ app.request.locale|locale_name(app.request.locale)|u.title }}
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-language">
+                                    <li><a class="dropdown-item" href="{{ path('language', {_locale: 'en'}) }}">
+                                            {{ 'English'|trans }}
+                                        </a></li>
+                                    <li><a class="dropdown-item" href="{{ path('language', {_locale: 'fr'}) }}">
+                                            {{ 'French'|trans }}
+                                        </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main role="main" class="container mt-3">
+            {% block body %}{% endblock %}
+        </main>
+        <br>
+        <footer class="mt-7 px-3 text-center text-muted">
+            <p class="text-white">
+                {{ 'This is the Simple Web Demo Free Lottery Management Application.'|trans }}
+                <br>
+                <a href="#" class="text-white">{{ 'Back to top'|trans }}</a>
+                <br>
+                &copy; 2020 - {{ "now"|date("Y") }}
+                {{ 'by scorpion3dd.'|trans }}
+                {{ 'All rights reserved.'|trans }}
+            </p>
+        </footer>
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

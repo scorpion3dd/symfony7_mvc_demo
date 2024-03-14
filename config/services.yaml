@@ -1,0 +1,108 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+    app.photoDir: "%kernel.project_dir%/public/uploads/photos"
+    app.defaultAdminEmail: '%env(resolve:DEFAULT_ADMIN_EMAIL)%'
+    app.defaultAdminName: '%env(resolve:DEFAULT_ADMIN_NAME)%'
+    app.adminEmail: "%env(string:default:app.defaultAdminEmail:ADMIN_EMAIL)%"
+    app.defaultBaseUrl: '%env(resolve:DEFAULT_BASE_URL)%'
+    app.supportedLocales: '%env(resolve:SUPPORTED_LOCALES)%'
+    app.domain: '%env(resolve:DOMAIN)%'
+    app.countAdmins: '%env(resolve:COUNT_ADMINS)%'
+    app.countResidentUsers: '%env(resolve:COUNT_RESIDENT_USERS)%'
+    app.countNotResidentUsers: '%env(resolve:COUNT_NOT_RESIDENT_USERS)%'
+    app.countLogs: '%env(resolve:COUNT_LOGS)%'
+    app.sendGridApiKey: '%env(resolve:SENDGRID_API_KEY)%'
+    app.akismetKey: '%env(resolve:AKISMET_KEY)%'
+    app.akismetUrl: '%env(resolve:AKISMET_URL)%'
+    app.slackTokenPost: '%env(resolve:SLACK_TOKEN_POST)%'
+    app.slackTokenUrl: '%env(resolve:SLACK_TOKEN_URL)%'
+    app.redisHost: '%env(resolve:REDIS_HOST)%'
+    router.request_context.base_url: '%env(default:app.defaultBaseUrl:SYMFONY_DEFAULT_ROUTE_URL)%'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    _instanceof:
+        App\CQRS\Command\CreateUser\CommandHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: command.bus }
+
+        App\CQRS\Query\FindUserByEmail\QueryHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: query.bus }
+
+        App\CQRS\Event\EventHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: event.bus }
+
+    App\Controller\:
+        resource: '../src/Controller/'
+        tags: [ 'controller.service_arguments' ]
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    App\State\UserPasswordHasherProcessor:
+        arguments:
+            - '@api_platform.doctrine.orm.state.persist_processor'
+
+
+    acme_api.event.jwt_created_listener:
+        class: App\EventListener\JWTCreatedListener
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
+
+    acme_api.event.jwt_authenticated_listener:
+        class: App\EventListener\JWTAuthenticatedListener
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_authenticated, method: onJWTAuthenticated }
+
+    acme_api.event.authentication_failure_listener:
+        class: App\EventListener\AuthenticationFailureListener
+        arguments: [ '@App\EventListener\JwtAnAuthorizationTool' ]
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_failure, method: onAuthenticationFailureResponse }
+
+    acme_api.event.jwt_invalid_listener:
+        class: App\EventListener\JWTInvalidListener
+        arguments: [ '@App\EventListener\JwtAnAuthorizationTool' ]
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_invalid, method: onJWTInvalid }
+
+    acme_api.event.jwt_notfound_listener:
+        class: App\EventListener\JWTNotFoundListener
+        arguments: [ '@App\EventListener\JwtAnAuthorizationTool' ]
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_not_found, method: onJWTNotFound }
+
+    App\EventSubscriber\DoctrineOrmSubscriber:
+        tags: [ { name: 'doctrine.event_subscriber' } ]
+        arguments:
+            $container: '@service_container'
+
+    App\EventSubscriber\DoctrineOdmSubscriber:
+        autoconfigure: true
+
+#    Redis:
+#        class: Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler
+#        arguments:
+#            - '@Redis'
+#            - { 'ttl': 600' }
+#        tags:
+#            - { name: Redis, method: connect }

@@ -1,0 +1,76 @@
+###> symfony/framework-bundle ###
+/.env
+/.env.test
+/config/secrets/prod/prod.decrypt.private.php
+
+
+/var/cache/*
+!/var/cache/.gitkeep
+/var/log/*
+!/var/log/.gitkeep
+/var/api/*
+!/var/api/.gitkeep
+/var/check/cs/*
+!/var/check/cs/.gitkeep
+/var/check/md/*
+!/var/check/md/.gitkeep
+/var/check/stan/*
+!/var/check/stan/.gitkeep
+/var/check/psalm/*
+!/var/check/psalm/.gitkeep
+/var/check/tests/unit/*
+!/var/check/tests/unit/.gitkeep
+/var/check/tests/unit-admin/*
+!/var/check/tests/unit-admin/.gitkeep
+/var/check/tests/unit-admin-form/*
+!/var/check/tests/unit-admin-form/.gitkeep
+/var/check/tests/integration/*
+!/var/check/tests/integration/.gitkeep
+/var/check/tests/functional/*
+!/var/check/tests/functional/.gitkeep
+
+/vendor/
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/uploads
+/public/uploads/photos/*
+!/public/uploads/photos/.gitkeep
+/public/spa/*
+!/public/spa/.gitkeep
+/public/bundles/*
+/public/build/*
+!/public/build/.gitkeep
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
+
+.idea/
+/.idea
+
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+###< squizlabs/php_codesniffer ###
+
+/psalm.xml
+/phpstan.neon
+/phpmd_ruleset.xml
+.scannerwork/*
+/sonar-project.properties
+/bitbucket-pipelines.yml
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###

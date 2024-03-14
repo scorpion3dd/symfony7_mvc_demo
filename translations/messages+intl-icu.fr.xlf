@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+<file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+    <tool tool-id="symfony" tool-name="Symfony" />
+    </header>
+    <body>
+    <trans-unit id="LNAVleg" resname="Give your feedback!">
+        <source>Give your feedback!</source>
+        <target>Donnez votre avis !</target>
+    </trans-unit>
+    <trans-unit id="3Mg5pAF" resname="View">
+        <source>View</source>
+        <target>Sélectionner</target>
+    </trans-unit>
+    <trans-unit id="eOy4.1V" resname="This is the Simple Web Demo Free Lottery Management Application.">
+        <source>This is the Simple Web Demo Free Lottery Management Application.</source>
+        <target>Ceci est l'application de gestion de loterie gratuite Simple Web Demo</target>
+    </trans-unit>
+    <trans-unit id="eOy4.2V" resname="by scorpion3dd.">
+        <source>by scorpion3dd.</source>
+        <target>par scorpion3dd.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.3V" resname="All rights reserved.">
+        <source>All rights reserved.</source>
+        <target>Tous droits réservés.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.0V" resname="Welcome!">
+        <source>Welcome!</source>
+        <target>Bienvenu!</target>
+    </trans-unit>
+    <trans-unit id="eOy4.4V" resname="Home">
+        <source>Home</source>
+        <target>Maison</target>
+    </trans-unit>
+    <trans-unit id="eOy4.5V" resname="About">
+        <source>About</source>
+        <target>À propos</target>
+    </trans-unit>
+    <trans-unit id="eOy4.7V" resname="Admin">
+        <source>Admin</source>
+        <target>Administratrice</target>
+    </trans-unit>
+    <trans-unit id="eOy4.8V" resname="English">
+        <source>English</source>
+        <target>Anglaise</target>
+    </trans-unit>
+    <trans-unit id="eOy4.9V" resname="French">
+        <source>French</source>
+        <target>Français</target>
+    </trans-unit>
+    <trans-unit id="eOy4.10V" resname="Back to top">
+        <source>Back to top</source>
+        <target>Retour au sommet</target>
+    </trans-unit>
+    <trans-unit id="eOy4.11V" resname="Application name:">
+        <source>Application name:</source>
+        <target>Nom de l'application:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.12V" resname="Simple Web Demo Free Lottery Management Application">
+        <source>Simple Web Demo Free Lottery Management Application</source>
+        <target>Démo Web simple Application de gestion de loterie gratuite</target>
+    </trans-unit>
+    <trans-unit id="eOy4.13V" resname="Application description:">
+        <source>Application description:</source>
+        <target>Description de la demande:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.14V" resname="The Free Lottery application performs user management.">
+        <source>The Free Lottery application performs user management.</source>
+        <target>L'application Free Lottery effectue la gestion des utilisateurs.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.15V" resname="Users with the 'Administrator' role in manual mode, after authentication in the application, through the admin menu can:">
+        <source>Users with the 'Administrator' role in manual mode, after authentication in the application, through the admin menu can:</source>
+        <target>Les utilisateurs ayant le rôle « Administrateur » en mode manuel, après authentification dans l'application, via le menu admin peuvent:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.16V" resname="create, edit, delete records with user data;">
+        <source>create, edit, delete records with user data;</source>
+        <target>créer, modifier, supprimer des enregistrements avec des données utilisateur;</target>
+    </trans-unit>
+    <trans-unit id="eOy4.17V" resname="can change the status of users from active to inactive;">
+        <source>can change the status of users from active to inactive;</source>
+        <target>peut changer le statut des utilisateurs d'actif à inactif;</target>
+    </trans-unit>
+    <trans-unit id="eOy4.18V" resname="can give other users access to a very valuable resource.">
+        <source>can give other users access to a very valuable resource.</source>
+        <target>peut donner à d’autres utilisateurs l’accès à une ressource très précieuse.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.19V" resname="And also in automatic mode for random users, the application can perform a 'Free Lottery', that is, change the status of users from active to inactive and can give other active users the opportunity to access a very valuable resource.">
+        <source>And also in automatic mode for random users, the application can perform a 'Free Lottery', that is, change the status of users from active to inactive and can give other active users the opportunity to access a very valuable resource.</source>
+        <target>Et également en mode automatique pour les utilisateurs aléatoires, l'application peut effectuer une "Loterie gratuite", c'est-à-dire changer le statut des utilisateurs d'actif à inactif et peut donner à d'autres utilisateurs actifs la possibilité d'accéder à une ressource très précieuse.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.20V" resname="Another application 'Free Lottery' manages roles and user access privileges. Users with the 'Administrator' role in manual mode, after authentication in the application, through the admin menu can:">
+        <source>Another application 'Free Lottery' manages roles and user access privileges. Users with the 'Administrator' role in manual mode, after authentication in the application, through the admin menu can:</source>
+        <target>Une autre application « Free Lottery » gère les rôles et les privilèges d'accès des utilisateurs. Les utilisateurs ayant le rôle « Administrateur » en mode manuel, après authentification dans l'application, via le menu admin peuvent:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.21V" resname="create, edit, delete user roles;">
+        <source>create, edit, delete user roles;</source>
+        <target>créer, modifier, supprimer des rôles d'utilisateur ;</target>
+    </trans-unit>
+    <trans-unit id="eOy4.22V" resname="create, edit, remove user access privileges;">
+        <source>create, edit, remove user access privileges;</source>
+        <target>créer, modifier, supprimer les privilèges d'accès des utilisateurs;</target>
+    </trans-unit>
+    <trans-unit id="eOy4.23V" resname="make user roles hierarchical;">
+        <source>make user roles hierarchical;</source>
+        <target>hiérarchiser les rôles des utilisateurs;</target>
+    </trans-unit>
+    <trans-unit id="eOy4.24V" resname="assign access privileges to user roles;">
+        <source>assign access privileges to user roles;</source>
+        <target>attribuer des privilèges d'accès aux rôles d'utilisateur;</target>
+    </trans-unit>
+    <trans-unit id="eOy4.25V" resname="change user roles;">
+        <source>change user roles;</source>
+        <target>modifier les rôles des utilisateurs;</target>
+    </trans-unit>
+    <trans-unit id="eOy4.26V" resname="The 'Free Lottery' application on the main page, freely available, without user authentication, allows you to view a list of active users with open access to a very valuable resource at a given time.">
+        <source>The 'Free Lottery' application on the main page, freely available, without user authentication, allows you to view a list of active users with open access to a very valuable resource at a given time.</source>
+        <target>L'application « Loterie gratuite » sur la page principale, disponible gratuitement, sans authentification des utilisateurs, permet de visualiser une liste d'utilisateurs actifs ayant un accès ouvert à une ressource très précieuse à un moment donné.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.27V" resname="UID">
+        <source>UID</source>
+        <target>UID</target>
+    </trans-unit>
+    <trans-unit id="eOy4.28V" resname="E-mail">
+        <source>E-mail</source>
+        <target>E-mail</target>
+    </trans-unit>
+    <trans-unit id="eOy4.29V" resname="Full Name">
+        <source>Full Name</source>
+        <target>Nom et prénom</target>
+    </trans-unit>
+    <trans-unit id="eOy4.30V" resname="Date Birthday">
+        <source>Date Birthday</source>
+        <target>Date d'anniversaire</target>
+    </trans-unit>
+    <trans-unit id="eOy4.31V" resname="Gender">
+        <source>Gender</source>
+        <target>Genre</target>
+    </trans-unit>
+    <trans-unit id="eOy4.32V" resname="The 'Free Lottery' application, freely available, allows to view a list of active users with open access to a very valuable resource at a given time.">
+        <source>The 'Free Lottery' application, freely available, allows to view a list of active users with open access to a very valuable resource at a given time.</source>
+        <target>L'application 'Free Lottery', disponible gratuitement, permet de visualiser une liste d'utilisateurs actifs ayant un accès ouvert à une ressource très précieuse à un moment donné.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.33V" resname="Total count:">
+        <source>Total count:</source>
+        <target>Le compte total:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.34V" resname="Comments count">
+        <source>Comments count</source>
+        <target>Les commentaires comptent</target>
+    </trans-unit>
+    <trans-unit id="eOy4.35V" resname="Male">
+        <source>Male</source>
+        <target>Mâle</target>
+    </trans-unit>
+    <trans-unit id="eOy4.36V" resname="Female">
+        <source>Female</source>
+        <target>Femelle</target>
+    </trans-unit>
+    <trans-unit id="eOy4.37V" resname="User">
+        <source>User</source>
+        <target>Utilisateur</target>
+    </trans-unit>
+    <trans-unit id="eOy4.38V" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+    </trans-unit>
+    <trans-unit id="eOy4.39V" resname="Access">
+        <source>Access</source>
+        <target>Accéder</target>
+    </trans-unit>
+    <trans-unit id="eOy4.40V" resname="Status">
+        <source>Status</source>
+        <target>Statut</target>
+    </trans-unit>
+    <trans-unit id="eOy4.41V" resname="Yes">
+        <source>Yes</source>
+        <target>Oui</target>
+    </trans-unit>
+    <trans-unit id="eOy4.42V" resname="No">
+        <source>No</source>
+        <target>Non</target>
+    </trans-unit>
+    <trans-unit id="eOy4.43V" resname="Active">
+        <source>Active</source>
+        <target>Actif</target>
+    </trans-unit>
+    <trans-unit id="eOy4.44V" resname="Disactive">
+        <source>Disactive</source>
+        <target>Désactivé</target>
+    </trans-unit>
+    <trans-unit id="eOy4.45V" resname="Roles">
+        <source>Roles</source>
+        <target>Les rôles</target>
+    </trans-unit>
+    <trans-unit id="eOy4.46V" resname="Add your comment">
+        <source>Add your comment</source>
+        <target>Ajoutez votre commentaire</target>
+    </trans-unit>
+    <trans-unit id="eOy4.47V" resname="No comments have been posted yet for this user.">
+        <source>No comments have been posted yet for this user.</source>
+        <target>Aucun commentaire n'a encore été publié pour cet utilisateur.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.48V" resname="Previous">
+        <source>Previous</source>
+        <target>Précédent</target>
+    </trans-unit>
+    <trans-unit id="eOy4.49V" resname="Next">
+        <source>Next</source>
+        <target>Suivant</target>
+    </trans-unit>
+    <trans-unit id="eOy4.50V" resname="Username">
+        <source>Username</source>
+        <target>Nom d'utilisateur</target>
+    </trans-unit>
+    <trans-unit id="eOy4.51V" resname="Date created at">
+        <source>Date created at</source>
+        <target>Date de création à</target>
+    </trans-unit>
+    <trans-unit id="eOy4.52V" resname="Date updated at">
+        <source>Date updated at</source>
+        <target>Date de mise à jour à</target>
+    </trans-unit>
+    <trans-unit id="eOy4.53V" resname="Guest">
+        <source>Guest</source>
+        <target>Invité</target>
+    </trans-unit>
+    <trans-unit id="eOy4.54V" resname="Your name">
+        <source>Your name</source>
+        <target>Votre nom</target>
+    </trans-unit>
+    <trans-unit id="eOy4.55V" resname="Text">
+        <source>Text</source>
+        <target>Texte</target>
+    </trans-unit>
+    <trans-unit id="eOy4.56V" resname="Email">
+        <source>Email</source>
+        <target>E-mail</target>
+    </trans-unit>
+    <trans-unit id="eOy4.57V" resname="Photo">
+        <source>Photo</source>
+        <target>Photo</target>
+    </trans-unit>
+    <trans-unit id="eOy4.58V" resname="Submit">
+        <source>Submit</source>
+        <target>Soumettre</target>
+    </trans-unit>
+    <trans-unit id="eOy4.59V" resname="Thank you for the comment, your comment will be posted after moderation.">
+        <source>Thank you for the comment, your comment will be posted after moderation.</source>
+        <target>Merci pour le commentaire, votre commentaire sera publié après modération.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.60V" resname="Can you check your submission? There are some problems with it.">
+        <source>Can you check your submission? There are some problems with it.</source>
+        <target>Pouvez-vous vérifier votre soumission? Cela pose quelques problèmes.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.61V" resname="Comment reviewed, thank you!">
+        <source>Comment reviewed, thank you!</source>
+        <target>Commentaire examiné, merci !</target>
+    </trans-unit>
+    <trans-unit id="eOy4.62V" resname="Applied transition:">
+        <source>Applied transition:</source>
+        <target>Transition appliquée:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.63V" resname="New state:">
+        <source>New state:</source>
+        <target>Nouvel état:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.64V" resname="Author:">
+        <source>Author:</source>
+        <target>Auteur:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.65V" resname="Email:">
+        <source>Email:</source>
+        <target>E-mail:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.66V" resname="State:">
+        <source>State:</source>
+        <target>État:</target>
+    </trans-unit>
+    <trans-unit id="eOy4.67V" resname="Accept">
+        <source>Accept</source>
+        <target>Accepter</target>
+    </trans-unit>
+    <trans-unit id="eOy4.68V" resname="Reject">
+        <source>Reject</source>
+        <target>Rejeter</target>
+    </trans-unit>
+    <trans-unit id="eOy4.69V" resname="Log in!">
+        <source>Log in!</source>
+        <target>Se connecter!</target>
+    </trans-unit>
+    <trans-unit id="eOy4.70V" resname="You are logged in as">
+        <source>You are logged in as</source>
+        <target>Vous êtes connecté en tant que</target>
+    </trans-unit>
+    <trans-unit id="eOy4.71V" resname="Logout">
+        <source>Logout</source>
+        <target>Se déconnecter</target>
+    </trans-unit>
+    <trans-unit id="eOy4.72V" resname="Please sign in">
+        <source>Please sign in</source>
+        <target>Veuillez vous connecter</target>
+    </trans-unit>
+    <trans-unit id="eOy4.73V" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+    </trans-unit>
+    <trans-unit id="eOy4.74V" resname="Sign in">
+        <source>Sign in</source>
+        <target>Se connecter</target>
+    </trans-unit>
+    <trans-unit id="eOy4.75V" resname="Registration!">
+        <source>Registration!</source>
+        <target>Inscription!</target>
+    </trans-unit>
+    <trans-unit id="eOy4.76V" resname="You are registrationed in as">
+        <source>You are registrationed in as</source>
+        <target>Vous êtes inscrit en tant que</target>
+    </trans-unit>
+    <trans-unit id="eOy4.77V" resname="Please registration">
+        <source>Please registration</source>
+        <target>Veuillez vous inscrire</target>
+    </trans-unit>
+    <trans-unit id="eOy4.78V" resname="Registration">
+        <source>Registration</source>
+        <target>Inscription</target>
+    </trans-unit>
+    <trans-unit id="eOy4.79V" resname="Back to the website">
+        <source>Back to the website</source>
+        <target>Retour au site</target>
+    </trans-unit>
+    <trans-unit id="eOy4.80V" resname="Users">
+        <source>Users</source>
+        <target>Utilisateurs</target>
+    </trans-unit>
+    <trans-unit id="eOy4.81V" resname="Comments">
+        <source>Comments</source>
+        <target>Commentaires</target>
+    </trans-unit>
+    <trans-unit id="eOy4.82V" resname="Welcome to Admin application">
+        <source>Welcome to Admin application</source>
+        <target>Bienvenue dans l'application Administrateur</target>
+    </trans-unit>
+    <trans-unit id="eOy4.83V" resname="You have successfully enter in your Admin application!">
+        <source>You have successfully enter in your Admin application!</source>
+        <target>Vous avez réussi à vous connecter à votre application Admin !</target>
+    </trans-unit>
+    <trans-unit id="eOy4.84V" resname="New users">
+        <source>New users</source>
+        <target>Nouveaux utilisateurs</target>
+    </trans-unit>
+    <trans-unit id="eOy4.85V" resname="Accessing users">
+        <source>Accessed users</source>
+        <target>Accédé aux utilisateurs</target>
+    </trans-unit>
+    <trans-unit id="eOy4.86V" resname="New comments">
+        <source>New comments</source>
+        <target>Nouveaux commentaires</target>
+    </trans-unit>
+    <trans-unit id="eOy4.87V" resname="Published comments">
+        <source>Published comments</source>
+        <target>Commentaires publiés</target>
+    </trans-unit>
+    <trans-unit id="eOy4.88V" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>Tableau de bord</target>
+    </trans-unit>
+    <trans-unit id="eOy4.89V" resname="Main">
+        <source>Main</source>
+        <target>Principal</target>
+    </trans-unit>
+    <trans-unit id="eOy4.90V" resname="References">
+        <source>References</source>
+        <target>Les références</target>
+    </trans-unit>
+    <trans-unit id="eOy4.91V" resname="User Comment">
+        <source>User Comment</source>
+        <target>Commentaire de l'utilisateur</target>
+    </trans-unit>
+    <trans-unit id="eOy4.92V" resname="User Comments">
+        <source>User Comments</source>
+        <target>Commentaires des utilisateurs</target>
+    </trans-unit>
+    <trans-unit id="eOy4.93V" resname="User details">
+        <source>User details</source>
+        <target>Détails de l'utilisateur</target>
+    </trans-unit>
+    <trans-unit id="eOy4.94V" resname="Comments details">
+        <source>Comments details</source>
+        <target>Détails des commentaires</target>
+    </trans-unit>
+    <trans-unit id="eOy4.95V" resname="Permission">
+        <source>Permission</source>
+        <target>Autorisation</target>
+    </trans-unit>
+    <trans-unit id="eOy4.96V" resname="Permissions">
+        <source>Permissions</source>
+        <target>Autorisations</target>
+    </trans-unit>
+    <trans-unit id="eOy4.97V" resname="Role">
+        <source>Role</source>
+        <target>Rôle</target>
+    </trans-unit>
+    <trans-unit id="eOy4.98V" resname="Parent Roles">
+        <source>Parent Roles</source>
+        <target>Rôles des parents</target>
+    </trans-unit>
+    <trans-unit id="eOy4.99V" resname="Child Roles">
+        <source>Child Roles</source>
+        <target>Rôles des enfants</target>
+    </trans-unit>
+    <trans-unit id="eOy4.100V" resname="Roles Application">
+            <source>Roles Application</source>
+            <target>Application de rôles</target>
+        </trans-unit>
+    <trans-unit id="eOy4.101V" resname="Roles Permissions">
+        <source>Roles Permissions</source>
+        <target>Autorisations des rôles</target>
+    </trans-unit>
+    <trans-unit id="eOy4.102V" resname="Monitoring">
+        <source>Monitoring</source>
+        <target>Surveillance</target>
+    </trans-unit>
+    <trans-unit id="eOy4.103V" resname="Logs">
+        <source>Logs</source>
+        <target>Journaux</target>
+    </trans-unit>
+    <trans-unit id="eOy4.104V" resname="Log">
+        <source>Log</source>
+        <target>Enregistrer</target>
+    </trans-unit>
+    <trans-unit id="eOy4.105V" resname="Create Log">
+        <source>Create Log</source>
+        <target>Créer un journal</target>
+    </trans-unit>
+    <trans-unit id="eOy4.106V" resname="Log dateils">
+        <source>Log dateils</source>
+        <target>Détails du journal</target>
+    </trans-unit>
+    <trans-unit id="eOy4.107V" resname="ID">
+        <source>ID</source>
+        <target>IDENTIFIANT</target>
+    </trans-unit>
+    <trans-unit id="eOy4.108V" resname="Message">
+        <source>Message</source>
+        <target>Message</target>
+    </trans-unit>
+    <trans-unit id="eOy4.109V" resname="Priority">
+        <source>Priority</source>
+        <target>Priorité</target>
+    </trans-unit>
+    <trans-unit id="eOy4.110V" resname="Priority name">
+        <source>Priority name</source>
+        <target>Nom de la priorité</target>
+    </trans-unit>
+    <trans-unit id="eOy4.111V" resname="Extra">
+        <source>Extra</source>
+        <target>Supplémentaire</target>
+    </trans-unit>
+    <trans-unit id="eOy4.112V" resname="Timestamp">
+        <source>Timestamp</source>
+        <target>Horodatage</target>
+    </trans-unit>
+    <trans-unit id="eOy4.113V" resname="Show">
+        <source>Show</source>
+        <target>Montrer</target>
+    </trans-unit>
+    <trans-unit id="eOy4.114V" resname="Edit">
+        <source>Edit</source>
+        <target>Modifier</target>
+    </trans-unit>
+    <trans-unit id="eOy4.115V" resname="Delete">
+        <source>Delete</source>
+        <target>Supprimer</target>
+    </trans-unit>
+    <trans-unit id="eOy4.116V" resname="No logs have been active yet for this Lottery.">
+        <source>No logs have been active yet for this Lottery.</source>
+        <target>Aucun journal n'a encore été actif pour cette loterie.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.117V" resname="No users have been active yet for this Lottery.">
+        <source>No users have been active yet for this Lottery.</source>
+        <target>Aucun utilisateur n'a encore été actif pour cette loterie.</target>
+    </trans-unit>
+    <trans-unit id="eOy4.118V" resname="Edit Log">
+        <source>Edit Log</source>
+        <target>Modifier le journal</target>
+    </trans-unit>
+    <trans-unit id="eOy4.119V" resname="Show Log">
+        <source>Show Log</source>
+        <target>Afficher le journal</target>
+    </trans-unit>
+    <trans-unit id="eOy4.120V" resname="Save changes">
+        <source>Save changes</source>
+        <target>Sauvegarder les modifications</target>
+    </trans-unit>
+    <trans-unit id="eOy4.121V" resname="">
+        <source></source>
+        <target></target>
+    </trans-unit>
+
+    <trans-unit id="Dg2dPd6" resname="nb_of_comments">
+        <source>nb_of_comments</source>
+        <target>{count, plural, =0 {Aucun commentaire.} =1 {1 commentaire.} other {# commentaires.}}</target>
+    </trans-unit>
+    <trans-unit id="Dg2dPd7" resname="nb_of_users">
+        <source>nb_of_users</source>
+        <target>{count, plural, =0 {Aucun commentaire.} =1 {1 commentaire.} other {# commentaires.}}</target>
+    </trans-unit>
+    </body>
+</file>
+</xliff>

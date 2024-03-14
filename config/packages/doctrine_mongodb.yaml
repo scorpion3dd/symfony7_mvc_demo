@@ -1,0 +1,20 @@
+doctrine_mongodb:
+    default_commit_options: ~
+    auto_generate_proxy_classes: '%kernel.debug%'
+    auto_generate_hydrator_classes: '%kernel.debug%'
+    hydrator_namespace: 'Mongodb_Hydrators'
+    proxy_namespace: 'Mongodb_Proxies'
+    connections:
+        default:
+            server: "mongodb://%env(resolve:MONGO_CONNECT_USER)%:%env(resolve:MONGO_CONNECT_PASSWORD)%@%env(resolve:MONGO_HOST)%:%env(resolve:MONGO_PORT)%/%env(resolve:MONGO_CONNECT_DB)%?directConnection=true"
+    default_database: "%env(resolve:MONGO_CONNECT_DB)%"
+    document_managers:
+        default:
+            auto_mapping: true
+            mappings:
+                App:
+                    is_bundle: false
+                    type: attribute
+                    dir: '%kernel.project_dir%/src/Document'
+                    prefix: App\Document\
+                    alias: App

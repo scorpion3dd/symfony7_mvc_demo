@@ -1,0 +1,105 @@
+/**
+ * This file is part of the Simple Web Demo Free Lottery Management Application.
+ *
+ * This project is no longer maintained.
+ * The project is written in Symfony Framework Release.
+ *
+ * @link https://github.com/scorpion3dd
+ * @author Denis Puzik <scorpion3dd@gmail.com>
+ * @copyright Copyright (c) 2023-2024 scorpion3dd
+ */
+
+@import '~bootstrap/scss/bootstrap';
+@import './variables';
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    --bs-navbar-padding-x: 0;
+    --bs-navbar-padding-y: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    font-family: $font-family-title;
+    font-weight: $font-weight-normal;
+    font-size: 1.8rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand, .nav-link {
+    transition: all .15s;
+}
+
+.nav-conference {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.lift {
+    transition: box-shadow .25s ease,transform .25s ease;
+
+    &:focus, &:hover {
+        box-shadow: 0 1rem 2.5rem rgba(22,28,45,.1),0 .5rem 1rem -.75rem rgba(22,28,45,.1)!important;
+        transform: translate3d(0, -4px, 0);
+    }
+}
+
+.comment-img {
+    width: 250px;
+    height: 150px;
+
+    img {
+        max-width: 250px;
+        max-height: 150px;
+    }
+}
+
+.comment-text {
+    font-size: 12px;
+    line-height: 15px;
+}
+
+footer {
+    background: #18171b;
+}
+
+div.app-caption {
+    padding: 25px 0px;
+    font-size: 0.7em;
+    font-weight: bold;
+    color:#6aacaf
+}
+
+th.sorted {
+    text-decoration: underline;
+}
+
+// https://html5book.ru/specsimvoly-html/
+a.asc:before{
+    content: "\21D3 ";
+    display: inline-block;
+    font-weight: bold;
+}
+
+a.desc:before{
+    content: "\21D1 ";
+    display: inline-block;
+    font-weight: bold;
+}

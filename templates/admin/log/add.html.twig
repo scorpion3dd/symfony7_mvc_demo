@@ -1,0 +1,40 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content_title %}
+    {{ 'Create Log'|trans }}
+{% endblock %}
+
+{% block page_title %}
+    {{ parent() }}
+    <title>{{ 'Create Log'|trans }}</title>
+{% endblock %}
+
+{% block main %}
+    {% for message in app.flashes('notification') %}
+        <div class="alert alert-info alert-dismissible fade show">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="bg-light shadow border rounded-3 p-4">
+                {{ form(log_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'About'|trans }} - {{ 'This is the Simple Web Demo Free Lottery Management Application.'|trans }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'About'|trans }}</h1>
+    <h2>{{ 'Application name:'|trans }} {{ 'Simple Web Demo Free Lottery Management Application'|trans }}</h2>
+    <h3>{{ 'Application description:'|trans }}</h3>
+    <p>{{ 'The Free Lottery application performs user management.'|trans }}</p>
+    <p>
+        {{ "Users with the 'Administrator' role in manual mode, after authentication in the application, through the admin menu can:"|trans }}
+    </p>
+    <ul>
+        <li>{{ 'create, edit, delete records with user data;'|trans }}</li>
+        <li>{{ 'can change the status of users from active to inactive;'|trans }}</li>
+        <li>{{ 'can give other users access to a very valuable resource.'|trans }}</li>
+    </ul>
+    <p>
+        {{ "And also in automatic mode for random users, the application can perform a 'Free Lottery', that is, change the status of users from active to inactive and can give other active users the opportunity to access a very valuable resource."|trans }}
+    </p>
+    <p>
+        {{ "Another application 'Free Lottery' manages roles and user access privileges. Users with the 'Administrator' role in manual mode, after authentication in the application, through the admin menu can:"|trans }}
+    </p>
+    <ul>
+        <li>{{ 'create, edit, delete user roles;'|trans }}</li>
+        <li>{{ 'create, edit, remove user access privileges;'|trans }}</li>
+        <li>{{ 'make user roles hierarchical;'|trans }}</li>
+        <li>{{ 'assign access privileges to user roles;'|trans }}</li>
+        <li>{{ 'change user roles;'|trans }}</li>
+    </ul>
+    <p>
+        {{ "The 'Free Lottery' application on the main page, freely available, without user authentication, allows you to view a list of active users with open access to a very valuable resource at a given time."|trans }}
+    </p>
+{% endblock %}

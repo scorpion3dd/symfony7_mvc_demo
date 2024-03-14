@@ -1,0 +1,45 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Registration!'|trans }}{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            {{ 'You are registrationed in as'|trans }} {{ app.user.userIdentifier }},
+            <a href="{{ path('app_logout') }}">{{ 'Logout'|trans }}</a>
+        </div>
+    {% endif %}
+
+    <h1 class="h3 mb-3 font-weight-normal">{{ 'Please registration'|trans }}</h1>
+    <label for="inputUsername">{{ 'Username'|trans }}</label>
+    <input type="text" value="{{ last_username }}" name="username" id="inputUsername"
+           class="form-control" autocomplete="username" required autofocus>
+    <label for="inputPassword">{{ 'Password'|trans }}</label>
+    <input type="password" name="password" id="inputPassword" class="form-control"
+           autocomplete="current-password" required>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        {{ 'Registration'|trans }}
+    </button>
+</form>
+{% endblock %}

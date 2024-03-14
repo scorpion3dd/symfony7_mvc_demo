@@ -1,0 +1,38 @@
+#!/usr/bin/env php
+<?php
+/**
+ * This file is part of the Simple Web Demo Free Lottery Management Application.
+ *
+ * This project is no longer maintained.
+ * The project is written in Symfony Framework Release.
+ *
+ * @link https://github.com/scorpion3dd
+ * @author Denis Puzik <scorpion3dd@gmail.com>
+ * @copyright Copyright (c) 2023-2024 scorpion3dd
+ */
+
+declare(strict_types=1);
+
+use App\Kernel;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+
+//$dsn = getenv('DATABASE_URL');
+//echo $dsn;
+//if(!$dsn) {
+//    $dsnMysql = 'mysql://'.getenv('MYSQL_USER').':'.getenv('MYSQL_PASSWORD')
+//        .'@'.getenv('MYSQL_HOST').':'.getenv('MYSQL_PORT')
+//        .'/'.getenv('MYSQL_DATABASE').'?serverVersion=8&charset=utf8mb4';
+//    putenv("DATABASE_URL=".$dsnMysql);
+//}
+
+if (!is_file(dirname(__DIR__).'/vendor/autoload_runtime.php')) {
+    throw new LogicException('Symfony Runtime is missing. Try running "composer require symfony/runtime".');
+}
+
+require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
+
+return function (array $context) {
+    $kernel = new Kernel($context['APP_ENV'], (bool) $context['APP_DEBUG']);
+
+    return new Application($kernel);
+};

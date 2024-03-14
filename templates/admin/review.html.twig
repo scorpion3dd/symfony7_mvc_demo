@@ -1,0 +1,19 @@
+{#
+* This file is part of the Simple Web Demo Free Lottery Management Application.
+*
+* This project is no longer maintained.
+* The project is written in Symfony Framework Release.
+*
+* @link https://github.com/scorpion3dd
+* @author Denis Puzik <scorpion3dd@gmail.com>
+* @copyright Copyright (c) 2023-2024 scorpion3dd
+#}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>{{ 'Comment reviewed, thank you!'|trans }}</h2>
+
+    <p>{{ 'Applied transition:'|trans }} <strong>{{ transition }}</strong></p>
+    <p>{{ 'New state:'|trans }} <strong>{{ comment.state }}</strong></p>
+{% endblock %}

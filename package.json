@@ -1,0 +1,39 @@
+{
+    "name": "simple-application-free-lottery-symfony-mvc-back-skeleton",
+    "version": "1.0.0",
+    "displayName": "SimpleWebDemoFreeLotteryManagementApplicationInSymfonyMVCBack",
+    "description": "Simple Web Demo Free Lottery Management Application in Symfony MVC back",
+    "author": "Denis Puzik <scorpion3dd@gmail.com>",
+    "license": "Apache-2.0",
+    "keywords": [
+        "ecosystem:symfony"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.17.0",
+        "@babel/preset-env": "^7.16.0",
+        "@hotwired/stimulus": "^3.0.0",
+        "@popperjs/core": "^2.11.8",
+        "@symfony/stimulus-bridge": "^3.2.0",
+        "@symfony/ux-chartjs": "file:vendor/symfony/ux-chartjs/assets",
+        "@symfony/webpack-encore": "^4.0.0",
+        "bootstrap": "^5.3.3",
+        "bs-custom-file-input": "^1.3.4",
+        "chart.js": "^3.4.1 <3.9",
+        "chartjs-plugin-zoom": "^2.0.1",
+        "core-js": "^3.23.0",
+        "node-sass": "^8.0.0",
+        "regenerator-runtime": "^0.13.9",
+        "sass": "^1.71.1",
+        "sass-loader": "^13.3.3",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-notifier": "^1.15.0"
+    },
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    }
+}
