@@ -16,8 +16,6 @@ namespace App\Tests\Unit\EntityListener;
 
 use App\EntityListener\UserEntityListener;
 use App\Tests\Unit\BaseKernelTestCase;
-use Doctrine\ORM\Event\PrePersistEventArgs;
-use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
 use Exception;
 use Psr\Container\ContainerExceptionInterface;
@@ -47,7 +45,6 @@ class UserEntityListenerTest extends BaseKernelTestCase
      * @return void
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function setUp(): void
     {
@@ -65,11 +62,9 @@ class UserEntityListenerTest extends BaseKernelTestCase
      *
      * @return void
      * @throws Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testPrePersist(): void
     {
-//        self::markTestSkipped(self::class . ' skipped testPrePersist');
         $user = $this->createUser();
         $event = $this->createMock(LifecycleEventArgs::class);
         $this->listener->prePersist($user, $event);
@@ -81,7 +76,6 @@ class UserEntityListenerTest extends BaseKernelTestCase
      *
      * @return void
      * @throws Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testPreUpdate(): void
     {
