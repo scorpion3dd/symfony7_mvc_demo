@@ -21,6 +21,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\Query;
+use Doctrine\ORM\Query\Parameter;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use Exception;
@@ -66,11 +67,10 @@ class CommentRepositoryTest extends KernelTestCase
             });
         $mockDateTime = new DateTimeImmutable('-' . CommentRepository::DAYS_BEFORE_REJECTED_REMOVAL . ' days');
         $mockDateTime = $mockDateTime->setTime(0, 0, 0);
-        $parametersArray = [
-            'state_rejected' => 'rejected',
-            'state_spam' => 'spam',
-            'date' => $mockDateTime
-        ];
+        $parametersArray = [];
+        $parametersArray[] = new Parameter('state_rejected', 'rejected');
+        $parametersArray[] = new Parameter('state_spam', 'spam');
+        $parametersArray[] = new Parameter('date', $mockDateTime);
         $parameters = new ArrayCollection($parametersArray);
         $queryBuilder->expects($this->once())
             ->method('setParameters')
@@ -118,11 +118,10 @@ class CommentRepositoryTest extends KernelTestCase
             });
         $mockDateTime = new DateTimeImmutable('-' . CommentRepository::DAYS_BEFORE_REJECTED_REMOVAL . ' days');
         $mockDateTime = $mockDateTime->setTime(0, 0, 0);
-        $parametersArray = [
-            'state_rejected' => 'rejected',
-            'state_spam' => 'spam',
-            'date' => $mockDateTime
-        ];
+        $parametersArray = [];
+        $parametersArray[] = new Parameter('state_rejected', 'rejected');
+        $parametersArray[] = new Parameter('state_spam', 'spam');
+        $parametersArray[] = new Parameter('date', $mockDateTime);
         $parameters = new ArrayCollection($parametersArray);
         $queryBuilder->expects($this->once())
             ->method('setParameters')
