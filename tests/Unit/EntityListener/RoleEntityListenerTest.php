@@ -14,31 +14,25 @@ declare(strict_types=1);
 
 namespace App\Tests\Unit\EntityListener;
 
-use App\EntityListener\UserEntityListener;
+use App\EntityListener\RoleEntityListener;
 use App\Tests\Unit\BaseKernelTestCase;
-use Doctrine\ORM\Event\PrePersistEventArgs;
-use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
 use Exception;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
- * Class UserEntityListenerTest - Unit tests for State UserEntityListener
+ * Class RoleEntityListenerTest - Unit tests for State UserEntityListener
  * without connecting to external services, such as databases, message brokers, etc.
  * all calls to any external services are mute with Mock
  *
  * @package App\Tests\Unit\EntityListener
  */
-class UserEntityListenerTest extends BaseKernelTestCase
+class RoleEntityListenerTest extends BaseKernelTestCase
 {
-    /** @var UserEntityListener $listener */
-    private UserEntityListener $listener;
-
-    /** @var SluggerInterface $sluggerMock */
-    private $sluggerMock;
+    /** @var RoleEntityListener $listener */
+    private RoleEntityListener $listener;
 
     /** @var LoggerInterface $loggerMock */
     private $loggerMock;
@@ -53,9 +47,7 @@ class UserEntityListenerTest extends BaseKernelTestCase
     {
         parent::setUp();
         $this->loggerMock = $this->createMock(LoggerInterface::class);
-        $this->sluggerMock = $this->createMock(SluggerInterface::class);
-        $this->listener = new UserEntityListener(
-            $this->sluggerMock,
+        $this->listener = new RoleEntityListener(
             $this->loggerMock
         );
     }
@@ -69,25 +61,9 @@ class UserEntityListenerTest extends BaseKernelTestCase
      */
     public function testPrePersist(): void
     {
-//        self::markTestSkipped(self::class . ' skipped testPrePersist');
-        $user = $this->createUser();
+        $role = $this->createRole();
         $event = $this->createMock(LifecycleEventArgs::class);
-        $this->listener->prePersist($user, $event);
-        $this->assertTrue(method_exists($this->listener, 'debugFunction'));
-    }
-
-    /**
-     * @testCase - method preUpdate - must be a success
-     *
-     * @return void
-     * @throws Exception
-     * @throws \PHPUnit\Framework\MockObject\Exception
-     */
-    public function testPreUpdate(): void
-    {
-        $user = $this->createUser();
-        $event = $this->createMock(LifecycleEventArgs::class);
-        $this->listener->preUpdate($user, $event);
+        $this->listener->prePersist($role, $event);
         $this->assertTrue(method_exists($this->listener, 'debugFunction'));
     }
 }
