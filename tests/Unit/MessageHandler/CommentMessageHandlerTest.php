@@ -156,7 +156,7 @@ class CommentMessageHandlerTest extends BaseKernelTestCase
 
         $this->commentStateMachineMock->expects($this->exactly(4))
             ->method('can')
-            ->willReturnCallback(fn($comment, $status) => match([$comment, $status]) {
+            ->willReturnCallback(fn($comment, $status) => match ([$comment, $status]) {
                 [$this->comment, 'accept'] => false,
                 [$this->comment, 'publish'] => true,
                 [$this->comment, 'publish_ham'] => false,
@@ -197,7 +197,7 @@ class CommentMessageHandlerTest extends BaseKernelTestCase
 
         $this->commentStateMachineMock->expects($this->exactly(4))
             ->method('can')
-            ->willReturnCallback(fn($comment, $status) => match([$comment, $status]) {
+            ->willReturnCallback(fn($comment, $status) => match ([$comment, $status]) {
                 [$this->comment, 'accept'] => false,
                 [$this->comment, 'publish'] => true,
                 [$this->comment, 'publish_ham'] => true,
@@ -238,7 +238,7 @@ class CommentMessageHandlerTest extends BaseKernelTestCase
 
         $this->commentStateMachineMock->expects($this->exactly(4))
             ->method('can')
-            ->willReturnCallback(fn($comment, $status) => match([$comment, $status]) {
+            ->willReturnCallback(fn($comment, $status) => match ([$comment, $status]) {
                 [$this->comment, 'accept'] => false,
                 [$this->comment, 'publish'] => false,
                 [$this->comment, 'publish_ham'] => false,

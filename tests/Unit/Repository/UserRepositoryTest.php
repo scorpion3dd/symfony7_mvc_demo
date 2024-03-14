@@ -80,7 +80,7 @@ class UserRepositoryTest extends KernelTestCase
             ->willReturnSelf();
         $queryBuilder->expects($this->exactly(3))
             ->method('setParameter')
-            ->willReturnCallback(fn($key, $value) => match([$key, $value]) {
+            ->willReturnCallback(fn($key, $value) => match ([$key, $value]) {
                 ['access', $access] => $queryBuilder,
                 ['status', $status] => $queryBuilder,
                 ['state', $state] => $queryBuilder,
@@ -156,7 +156,7 @@ class UserRepositoryTest extends KernelTestCase
             ->willReturnSelf();
         $queryBuilder->expects($this->exactly(3))
             ->method('setParameter')
-            ->willReturnCallback(fn($key, $value) => match([$key, $value]) {
+            ->willReturnCallback(fn($key, $value) => match ([$key, $value]) {
                 ['access', $access] => $queryBuilder,
                 ['status', $status] => $queryBuilder,
                 ['state', $state] => $queryBuilder,
@@ -236,14 +236,14 @@ class UserRepositoryTest extends KernelTestCase
             ->willReturnSelf();
         $queryBuilder->expects($this->exactly(3))
             ->method('andWhere')
-            ->willReturnCallback(fn($key) => match([$key]) {
+            ->willReturnCallback(fn($key) => match ([$key]) {
                 ['u.updatedAt IS NOT NULL'] => $queryBuilder,
                 ['u.access = :access'] => $queryBuilder,
                 ['u.status = :status'] => $queryBuilder,
             });
         $queryBuilder->expects($this->exactly(2))
             ->method('setParameter')
-            ->willReturnCallback(fn($key, $value) => match([$key, $value]) {
+            ->willReturnCallback(fn($key, $value) => match ([$key, $value]) {
                 ['access', $access] => $queryBuilder,
                 ['status', $status] => $queryBuilder,
             });

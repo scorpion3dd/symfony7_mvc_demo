@@ -54,13 +54,13 @@ class CommentRepositoryTest extends KernelTestCase
         $queryBuilder = $this->createMock(QueryBuilder::class);
         $queryBuilder->expects($this->exactly(1))
             ->method('select')
-            ->willReturnCallback(fn($key) => match([$key]) {
+            ->willReturnCallback(fn($key) => match ([$key]) {
                 ['c'] => $queryBuilder,
                 ['COUNT(c.id)'] => $queryBuilder,
             });
         $queryBuilder->expects($this->exactly(2))
             ->method('andWhere')
-            ->willReturnCallback(fn($key) => match([$key]) {
+            ->willReturnCallback(fn($key) => match ([$key]) {
                 ['c.state = :state_rejected or c.state = :state_spam'] => $queryBuilder,
                 ['c.createdAt < :date'] => $queryBuilder,
             });
@@ -112,7 +112,7 @@ class CommentRepositoryTest extends KernelTestCase
         $queryBuilder = $this->createMock(QueryBuilder::class);
         $queryBuilder->expects($this->exactly(2))
             ->method('andWhere')
-            ->willReturnCallback(fn($key) => match([$key]) {
+            ->willReturnCallback(fn($key) => match ([$key]) {
                 ['c.state = :state_rejected or c.state = :state_spam'] => $queryBuilder,
                 ['c.createdAt < :date'] => $queryBuilder,
             });
@@ -169,13 +169,13 @@ class CommentRepositoryTest extends KernelTestCase
         $queryBuilder = $this->createMock(QueryBuilder::class);
         $queryBuilder->expects($this->exactly(2))
             ->method('andWhere')
-            ->willReturnCallback(fn($key) => match([$key]) {
+            ->willReturnCallback(fn($key) => match ([$key]) {
                 ['c.user = :user'] => $queryBuilder,
                 ['c.state = :state'] => $queryBuilder,
             });
         $queryBuilder->expects($this->exactly(2))
             ->method('setParameter')
-            ->willReturnCallback(fn($key, $value) => match([$key, $value]) {
+            ->willReturnCallback(fn($key, $value) => match ([$key, $value]) {
                 ['user', $user] => $queryBuilder,
                 ['state', $state] => $queryBuilder,
             });

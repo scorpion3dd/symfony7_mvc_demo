@@ -16,7 +16,7 @@ namespace App\Tests\Unit\Controller\Admin;
 
 use App\Controller\Admin\LogController;
 use App\Document\Log;
-use App\Tests\UnitAdmin\Controller\BaseCrudControllerAdminTest;
+use App\Tests\UnitAdmin\Controller\BaseCrudControllerAdmin;
 use EasyCorp\Bundle\EasyAdminBundle\Test\Exception\InvalidClassPropertyTypeException;
 use EasyCorp\Bundle\EasyAdminBundle\Test\Exception\MissingClassMethodException;
 use Exception;
@@ -34,7 +34,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @package App\Tests\Unit\Controller\Admin
  */
-class LogControllerTest extends BaseCrudControllerAdminTest
+class LogControllerTest extends BaseCrudControllerAdmin
 {
     /**
      * @return string

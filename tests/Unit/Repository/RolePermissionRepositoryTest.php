@@ -63,7 +63,7 @@ class RolePermissionRepositoryTest extends KernelTestCase
             ->willReturnSelf();
         $queryBuilder->expects($this->exactly(2))
             ->method('leftJoin')
-            ->willReturnCallback(fn($class, $alias, $w, $condition) => match([$class, $alias, $w, $condition]) {
+            ->willReturnCallback(fn($class, $alias, $w, $condition) => match ([$class, $alias, $w, $condition]) {
                 [Role::class, 'r', 'WITH', 'rp.role = r.id'] => $queryBuilder,
                 [Permission::class, 'p', 'WITH', 'rp.permission = p.id'] => $queryBuilder,
             });
@@ -124,7 +124,7 @@ class RolePermissionRepositoryTest extends KernelTestCase
             ->willReturnSelf();
         $queryBuilder->expects($this->exactly(2))
             ->method('leftJoin')
-            ->willReturnCallback(fn($class, $alias, $w, $condition) => match([$class, $alias, $w, $condition]) {
+            ->willReturnCallback(fn($class, $alias, $w, $condition) => match ([$class, $alias, $w, $condition]) {
                 [Role::class, 'r', 'WITH', 'rp.role = r.id'] => $queryBuilder,
                 [Permission::class, 'p', 'WITH', 'rp.permission = p.id'] => $queryBuilder,
             });
