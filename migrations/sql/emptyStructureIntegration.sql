@@ -8,7 +8,7 @@
 #  @copyright Copyright (c) 2023-2024 scorpion3dd
 
 SET NAMES 'utf8';
-USE `learn_test`;
+USE `demo_test`;
 
 
 
