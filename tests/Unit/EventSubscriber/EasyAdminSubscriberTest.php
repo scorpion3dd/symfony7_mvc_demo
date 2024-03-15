@@ -19,6 +19,7 @@ use App\EventSubscriber\EasyAdminSubscriber;
 use App\Tests\Unit\BaseKernelTestCase;
 use EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext;
 use EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto;
+use EasyCorp\Bundle\EasyAdminBundle\Event\AbstractLifecycleEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\AfterCrudActionEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\AfterEntityUpdatedEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeCrudActionEvent;
@@ -99,8 +100,6 @@ class EasyAdminSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method onBeforeEntityPersisted - must be a success, Odm
      *
-     * Class "EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent" is declared "final" and cannot be doubled
-     *
      * @dataProvider provideEntity
      *
      * @param string $version
@@ -111,8 +110,7 @@ class EasyAdminSubscriberTest extends BaseKernelTestCase
      */
     public function testOnBeforeEntityPersisted(string $version): void
     {
-        self::markTestSkipped(self::class . ' skipped testOnBeforeEntityPersisted');
-        $event = $this->createMock(BeforeEntityPersistedEvent::class);
+        $event = $this->createMock(AbstractLifecycleEvent::class);
         $event->expects($this->once())
             ->method('getEntityInstance')
             ->willReturn($this->getEntity($version));
@@ -139,8 +137,6 @@ class EasyAdminSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method onBeforeEntityUpdatedEvent - must be a success, Odm
      *
-     * Class "EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityUpdatedEvent" is declared "final" and cannot be doubled
-     *
      * @dataProvider provideEntity
      *
      * @param string $version
@@ -151,8 +147,7 @@ class EasyAdminSubscriberTest extends BaseKernelTestCase
      */
     public function testOnBeforeEntityUpdatedEvent(string $version): void
     {
-        self::markTestSkipped(self::class . ' skipped testOnBeforeEntityUpdatedEvent');
-        $event = $this->createMock(BeforeEntityUpdatedEvent::class);
+        $event = $this->createMock(AbstractLifecycleEvent::class);
         $event->expects($this->once())
             ->method('getEntityInstance')
             ->willReturn($this->getEntity($version));
@@ -164,16 +159,13 @@ class EasyAdminSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method onAfterEntityUpdatedEvent - must be a success, Odm
      *
-     * Class "EasyCorp\Bundle\EasyAdminBundle\Event\AfterEntityUpdatedEvent" is declared "final" and cannot be doubled
-     *
      * @return void
      * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testOnAfterEntityUpdatedEvent(): void
     {
-        self::markTestSkipped(self::class . ' skipped testOnAfterEntityUpdatedEvent');
         $entity = new stdClass();
-        $event = $this->createMock(AfterEntityUpdatedEvent::class);
+        $event = $this->createMock(AbstractLifecycleEvent::class);
         $event->expects($this->once())
             ->method('getEntityInstance')
             ->willReturn($entity);

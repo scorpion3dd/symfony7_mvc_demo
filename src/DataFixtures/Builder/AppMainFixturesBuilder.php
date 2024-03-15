@@ -169,11 +169,11 @@ class AppMainFixturesBuilder extends BaseFixturesBuilder implements Builder
      */
     private function initRedis(): void
     {
+        // @codeCoverageIgnoreStart
         $this->debugFunction(self::class, 'initRedis');
         $this->redis = new Redis();
         try {
             $this->redis->connect($this->redisHost);
-        // @codeCoverageIgnoreStart
         } catch (Exception $ex) {
             $this->exception(self::class, $ex);
         }

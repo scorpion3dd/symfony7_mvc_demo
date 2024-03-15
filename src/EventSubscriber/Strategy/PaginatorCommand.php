@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace App\EventSubscriber\Strategy;
 
-use ApiPlatform\Doctrine\Orm\Paginator;
 use App\Entity\Admin;
 use App\Factory\AdminFactory;
 use App\Helper\UriHelper;
@@ -70,13 +69,13 @@ class PaginatorCommand extends BaseCommand implements Command
 
     /**
      * @param string $requestUri
-     * @param Paginator $result
+     * @param mixed $result
      * @param ViewEvent $event
      *
      * @return ViewEvent
      * @throws Exception
      */
-    private function postWriteApiAdmins(string $requestUri, Paginator $result, ViewEvent $event): ViewEvent
+    private function postWriteApiAdmins(string $requestUri, mixed $result, ViewEvent $event): ViewEvent
     {
         if ($this->uriHelper->isApiAdmins($requestUri)) {
             foreach ($result->getIterator() as &$value1) {
@@ -103,13 +102,13 @@ class PaginatorCommand extends BaseCommand implements Command
 
     /**
      * @param string $requestUri
-     * @param Paginator $result
+     * @param mixed $result
      * @param ViewEvent $event
      *
      * @return ViewEvent
      * @throws Exception
      */
-    private function postWriteApiAdminsList(string $requestUri, Paginator $result, ViewEvent $event): ViewEvent
+    private function postWriteApiAdminsList(string $requestUri, mixed $result, ViewEvent $event): ViewEvent
     {
         if ($this->uriHelper->isApiAdminsList($requestUri, 'list2')) {
             foreach ($result->getIterator() as $entity) {

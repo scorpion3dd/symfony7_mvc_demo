@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace App\EventSubscriber;
 
+use EasyCorp\Bundle\EasyAdminBundle\Event\AbstractLifecycleEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\AfterCrudActionEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\AfterEntityUpdatedEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeCrudActionEvent;
@@ -53,10 +54,10 @@ class EasyAdminSubscriber extends BaseSubscriber implements EventSubscriberInter
     }
 
     /**
-     * @param BeforeEntityPersistedEvent $event
+     * @param AbstractLifecycleEvent $event
      * @return void
      */
-    public function onBeforeEntityPersisted(BeforeEntityPersistedEvent $event): void
+    public function onBeforeEntityPersisted(AbstractLifecycleEvent $event): void
     {
         $this->debugFunction(self::class, 'onBeforeEntityPersisted');
         $entity = $event->getEntityInstance();
@@ -68,10 +69,10 @@ class EasyAdminSubscriber extends BaseSubscriber implements EventSubscriberInter
     }
 
     /**
-     * @param BeforeEntityUpdatedEvent $event
+     * @param AbstractLifecycleEvent $event
      * @return void
      */
-    public function onBeforeEntityUpdatedEvent(BeforeEntityUpdatedEvent $event): void
+    public function onBeforeEntityUpdatedEvent(AbstractLifecycleEvent $event): void
     {
         $this->debugFunction(self::class, 'BeforeEntityUpdatedEvent');
         $entity = $event->getEntityInstance();
@@ -83,10 +84,10 @@ class EasyAdminSubscriber extends BaseSubscriber implements EventSubscriberInter
     }
 
     /**
-     * @param AfterEntityUpdatedEvent $event
+     * @param AbstractLifecycleEvent $event
      * @return void
      */
-    public function onAfterEntityUpdatedEvent(AfterEntityUpdatedEvent $event): void
+    public function onAfterEntityUpdatedEvent(AbstractLifecycleEvent $event): void
     {
         $this->debugFunction(self::class, 'onAfterEntityUpdatedEvent');
         $entity = $event->getEntityInstance();

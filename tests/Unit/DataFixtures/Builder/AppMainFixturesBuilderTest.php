@@ -212,15 +212,14 @@ class AppMainFixturesBuilderTest extends BaseTestAppFixtures
     /**
      * @testCase - method getRedis - must be a success
      *
-     * Warning: Redis::connect(): php_network_getaddresses: getaddrinfo for redis failed: Name or service not known
-     *
      * @return void
      * @throws Exception
      */
     public function testGetRedis(): void
     {
-        self::markTestSkipped(self::class . ' skipped testGetRedis');
-        $this->builder->getRedis();
-        $this->assertTrue(true);
+        $redis = new Redis();
+        $this->builder->setRedis($redis);
+        $result = $this->builder->getRedis();
+        $this->assertSame($redis, $result);
     }
 }

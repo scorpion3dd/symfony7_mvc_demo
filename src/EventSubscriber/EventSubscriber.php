@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace App\EventSubscriber;
 
+use ApiPlatform\Doctrine\Orm\AbstractPaginator;
 use ApiPlatform\Doctrine\Orm\Paginator;
 use ApiPlatform\Symfony\EventListener\EventPriorities;
 use App\Entity\Admin;
@@ -129,7 +130,7 @@ class EventSubscriber extends BaseSubscriber implements EventSubscriberInterface
                     // @codeCoverageIgnoreEnd
                 }
             }
-            if ($result instanceof Paginator) {
+            if ($result instanceof Paginator || $result instanceof AbstractPaginator) {
                 $command = new PaginatorCommand(
                     $this->uriHelper,
                     $this->logger,

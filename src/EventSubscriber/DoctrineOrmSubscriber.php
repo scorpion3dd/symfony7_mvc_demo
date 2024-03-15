@@ -20,14 +20,10 @@ use App\Helper\ApplicationGlobals;
 use Carbon\Carbon;
 use Doctrine\Bundle\DoctrineBundle\Attribute\AsDoctrineListener;
 use Doctrine\ORM\Event\PostFlushEventArgs;
-use Doctrine\ORM\Event\PostLoadEventArgs;
-use Doctrine\ORM\Event\PostPersistEventArgs;
-use Doctrine\ORM\Event\PostRemoveEventArgs;
-use Doctrine\ORM\Event\PostUpdateEventArgs;
 use Doctrine\ORM\Event\PreFlushEventArgs;
-use Doctrine\ORM\Event\PrePersistEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Events;
+use Doctrine\Persistence\Event\LifecycleEventArgs;
 use Exception;
 use Psr\Log\LoggerInterface;
 use ReflectionClass;
@@ -85,33 +81,33 @@ class DoctrineOrmSubscriber extends BaseSubscriber implements EventSubscriberInt
     }
 
     /**
-     * @param PostPersistEventArgs $args
+     * @param LifecycleEventArgs $args
      *
      * @return void
      */
-    public function postPersist(PostPersistEventArgs $args): void
+    public function postPersist(LifecycleEventArgs $args): void
     {
         $this->debugFunction(self::class, 'postPersist');
         $this->setEntities($args);
     }
 
     /**
-     * @param PostUpdateEventArgs $args
+     * @param LifecycleEventArgs $args
      *
      * @return void
      */
-    public function postUpdate(PostUpdateEventArgs $args): void
+    public function postUpdate(LifecycleEventArgs $args): void
     {
         $this->debugFunction(self::class, 'postUpdate');
         $this->setEntities($args);
     }
 
     /**
-     * @param PostRemoveEventArgs $args
+     * @param LifecycleEventArgs $args
      *
      * @return void
      */
-    public function postRemove(PostRemoveEventArgs $args): void
+    public function postRemove(LifecycleEventArgs $args): void
     {
         $this->debugFunction(self::class, 'postRemove');
         $this->setEntities($args);
@@ -146,11 +142,11 @@ class DoctrineOrmSubscriber extends BaseSubscriber implements EventSubscriberInt
 
     /**
      * @psalm-suppress RedundantConditionGivenDocblockType
-     * @param PostLoadEventArgs $args
+     * @param LifecycleEventArgs $args
      *
      * @return void
      */
-    public function postLoad(PostLoadEventArgs $args): void
+    public function postLoad(LifecycleEventArgs $args): void
     {
         $this->debugFunction(self::class, 'postLoad');
         $object = $args->getObject();
@@ -174,11 +170,11 @@ class DoctrineOrmSubscriber extends BaseSubscriber implements EventSubscriberInt
     }
 
     /**
-     * @param PrePersistEventArgs $eventArgs
+     * @param LifecycleEventArgs $eventArgs
      *
      * @return void
      */
-    public function prePersist(PrePersistEventArgs $eventArgs): void
+    public function prePersist(LifecycleEventArgs $eventArgs): void
     {
         $this->debugFunction(self::class, 'prePersist');
         $object = $eventArgs->getObject();

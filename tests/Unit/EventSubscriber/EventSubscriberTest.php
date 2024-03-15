@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Unit\EventSubscriber;
 
-use ApiPlatform\Doctrine\Orm\Paginator;
+use ApiPlatform\Doctrine\Orm\AbstractPaginator;
 use App\Entity\Admin;
 use App\Entity\Comment;
 use App\EventSubscriber\BaseSubscriber;
@@ -176,29 +176,22 @@ class EventSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method postWrite - must be a success, result Paginator
      *
-     * Class "ApiPlatform\Doctrine\Orm\Paginator" is declared "final" and cannot be doubled
-     *
      * @return void
      * @throws Exception
      * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testPostWritePaginator(): void
     {
-        self::markTestSkipped(self::class . ' skipped testPostWritePaginator');
         $admin1 = $this->createAdmin('username1', 'password1');
         $data1 = [[$admin1, self::TOKEN]];
         $data2 = [$admin1];
         $iterator1 = new ArrayIterator($data1);
         $iterator2 = new ArrayIterator($data2);
 
-        $paginator = $this->createMock(Paginator::class);
+        $paginator = $this->createMock(AbstractPaginator::class);
         $paginator->expects($this->exactly(2))
             ->method('getIterator')
             ->willReturnOnConsecutiveCalls($iterator1, $iterator2);
-
-        $this->refreshTokenService->expects($this->once())
-            ->method('getJwtRefreshToken')
-            ->willReturn(new RefreshToken());
 
         $request = new Request();
         $request->setMethod(Request::METHOD_GET);

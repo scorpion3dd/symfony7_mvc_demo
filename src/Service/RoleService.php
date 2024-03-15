@@ -114,11 +114,11 @@ class RoleService extends BaseService implements RoleServiceInterface
      */
     private function initRedis(): void
     {
+        // @codeCoverageIgnoreStart
         $this->debugFunction(self::class, 'initRedis');
         $this->redis = new Redis();
         try {
             $this->redis->connect($this->redisHost);
-        // @codeCoverageIgnoreStart
         } catch (Exception $ex) {
             $this->exception(self::class, $ex);
         }

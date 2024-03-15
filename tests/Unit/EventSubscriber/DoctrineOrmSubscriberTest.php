@@ -18,14 +18,10 @@ use App\CQRS\Bus\EventBusInterface;
 use App\EventSubscriber\DoctrineOrmSubscriber;
 use App\Tests\Unit\BaseKernelTestCase;
 use Doctrine\ORM\Event\PostFlushEventArgs;
-use Doctrine\ORM\Event\PostLoadEventArgs;
-use Doctrine\ORM\Event\PostPersistEventArgs;
-use Doctrine\ORM\Event\PostRemoveEventArgs;
-use Doctrine\ORM\Event\PostUpdateEventArgs;
 use Doctrine\ORM\Event\PreFlushEventArgs;
-use Doctrine\ORM\Event\PrePersistEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Events;
+use Doctrine\Persistence\Event\LifecycleEventArgs;
 use Exception;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -85,15 +81,12 @@ class DoctrineOrmSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method postPersist - must be a success
      *
-     * Class "Doctrine\ORM\Event\PostPersistEventArgs" is declared "final" and cannot be doubled
-     *
      * @return void
      * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testPostPersist(): void
     {
-        self::markTestSkipped(self::class . ' skipped testPostPersist');
-        $args = $this->createMock(PostPersistEventArgs::class);
+        $args = $this->createMock(LifecycleEventArgs::class);
         $this->subscriber->postPersist($args);
         $this->assertTrue(method_exists($this->subscriber, 'debugFunction'));
     }
@@ -101,15 +94,12 @@ class DoctrineOrmSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method postUpdate - must be a success
      *
-     * Class "Doctrine\ORM\Event\PostUpdateEventArgs" is declared "final" and cannot be doubled
-     *
      * @return void
      * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testPostUpdate(): void
     {
-        self::markTestSkipped(self::class . ' skipped testPostUpdate');
-        $args = $this->createMock(PostUpdateEventArgs::class);
+        $args = $this->createMock(LifecycleEventArgs::class);
         $this->subscriber->postUpdate($args);
         $this->assertTrue(method_exists($this->subscriber, 'debugFunction'));
     }
@@ -117,15 +107,12 @@ class DoctrineOrmSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method postRemove - must be a success
      *
-     * Class "Doctrine\ORM\Event\PostRemoveEventArgs" is declared "final" and cannot be doubled
-     *
      * @return void
      * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testPostRemove(): void
     {
-        self::markTestSkipped(self::class . ' skipped testPostRemove');
-        $args = $this->createMock(PostRemoveEventArgs::class);
+        $args = $this->createMock(LifecycleEventArgs::class);
         $this->subscriber->postRemove($args);
         $this->assertTrue(method_exists($this->subscriber, 'debugFunction'));
     }
@@ -133,17 +120,14 @@ class DoctrineOrmSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method postFlush - must be a success
      *
-     * Class "Doctrine\ORM\Event\PostPersistEventArgs" is declared "final" and cannot be doubled
-     *
      * @return void
      * @throws Exception
      * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testPostFlush(): void
     {
-        self::markTestSkipped(self::class . ' skipped testPostFlush');
         $user = $this->createUser();
-        $args = $this->createMock(PostPersistEventArgs::class);
+        $args = $this->createMock(LifecycleEventArgs::class);
         $args->expects($this->once())
             ->method('getObject')
             ->willReturn($user);
@@ -157,17 +141,14 @@ class DoctrineOrmSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method postLoad - must be a success
      *
-     * Class "Doctrine\ORM\Event\PostLoadEventArgs" is declared "final" and cannot be doubled
-     *
      * @return void
      * @throws Exception
      * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testPostLoad(): void
     {
-        self::markTestSkipped(self::class . ' skipped testPostLoad');
         $user = $this->createUser();
-        $args = $this->createMock(PostLoadEventArgs::class);
+        $args = $this->createMock(LifecycleEventArgs::class);
         $args->expects($this->once())
             ->method('getObject')
             ->willReturn($user);
@@ -192,15 +173,12 @@ class DoctrineOrmSubscriberTest extends BaseKernelTestCase
     /**
      * @testCase - method prePersist - must be a success
      *
-     * Class "Doctrine\ORM\Event\PrePersistEventArgs" is declared "final" and cannot be doubled
-     *
      * @return void
      * @throws \PHPUnit\Framework\MockObject\Exception
      */
     public function testPrePersist(): void
     {
-        self::markTestSkipped(self::class . ' skipped testPrePersist');
-        $args = $this->createMock(PrePersistEventArgs::class);
+        $args = $this->createMock(LifecycleEventArgs::class);
         $this->subscriber->prePersist($args);
         $this->assertTrue(method_exists($this->subscriber, 'debugFunction'));
     }

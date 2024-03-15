@@ -20,9 +20,7 @@ use App\Entity\User;
 use App\Enum\Roles;
 use App\Util\LoggerTrait;
 use Carbon\Carbon;
-use Doctrine\ORM\Event\PostPersistEventArgs;
-use Doctrine\ORM\Event\PostRemoveEventArgs;
-use Doctrine\ORM\Event\PostUpdateEventArgs;
+use Doctrine\Persistence\Event\LifecycleEventArgs;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -139,11 +137,11 @@ abstract class BaseSubscriber
     }
 
     /**
-     * @param PostPersistEventArgs|PostUpdateEventArgs|PostRemoveEventArgs $args
+     * @param LifecycleEventArgs $args
      *
      * @return void
      */
-    public function setEntities(PostPersistEventArgs|PostUpdateEventArgs|PostRemoveEventArgs $args): void
+    public function setEntities(LifecycleEventArgs $args): void
     {
         $entity = $args->getObject();
         $this->entities[] = $entity;

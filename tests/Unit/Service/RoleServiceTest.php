@@ -239,15 +239,14 @@ class RoleServiceTest extends BaseKernelTestCase
     /**
      * @testCase - method getRedis - must be a success
      *
-     * Warning: Redis::connect(): php_network_getaddresses: getaddrinfo for redis failed: Name or service not known
-     *
      * @return void
      * @throws Exception
      */
     public function testGetRedis(): void
     {
-        self::markTestSkipped(self::class . ' skipped testGetRedis');
-        $this->roleService->getRedis();
-        $this->assertTrue(true);
+        $redis = new Redis();
+        $this->roleService->setRedis($redis);
+        $result = $this->roleService->getRedis();
+        $this->assertSame($redis, $result);
     }
 }

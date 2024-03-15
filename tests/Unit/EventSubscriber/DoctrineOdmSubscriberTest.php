@@ -19,9 +19,7 @@ use App\Tests\Unit\BaseKernelTestCase;
 use Doctrine\ODM\MongoDB\Event\LifecycleEventArgs as OdmLifecycleEventArgs;
 use Doctrine\ODM\MongoDB\Events;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Event\PostLoadEventArgs as OrmPostLoadEventArgs;
 use Doctrine\ORM\Event\PreFlushEventArgs as OrmPreFlushEventArgs;
-use Doctrine\ORM\Event\PrePersistEventArgs as OrmPrePersistEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs as OrmPreUpdateEventArgs;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Psr\Container\ContainerExceptionInterface;
@@ -92,20 +90,7 @@ class DoctrineOdmSubscriberTest extends BaseKernelTestCase
      */
     public function testPostLoadOrm(): void
     {
-        self::markTestSkipped(self::class . ' skipped testPostLoadOrm');
-        $objectManager = $this->createMock(EntityManagerInterface::class);
-        $objectManager->expects($this->once())
-            ->method('getClassMetadata')
-            ->willReturn(new ClassMetadata(stdClass::class));
-
-        $args = $this->createMock(OrmPostLoadEventArgs::class);
-        $args->expects($this->once())
-            ->method('getObject')
-            ->willReturn(new stdClass());
-        $args->expects($this->once())
-            ->method('getObjectManager')
-            ->willReturn($objectManager);
-
+        $args = $this->createMock(OdmLifecycleEventArgs::class);
         $this->subscriber->postLoad($args);
         $this->assertTrue(method_exists($this->subscriber, 'debugFunction'));
     }
@@ -131,20 +116,7 @@ class DoctrineOdmSubscriberTest extends BaseKernelTestCase
      */
     public function testPrePersistOrm(): void
     {
-        self::markTestSkipped(self::class . ' skipped testPrePersistOrm');
-        $objectManager = $this->createMock(EntityManagerInterface::class);
-        $objectManager->expects($this->once())
-            ->method('getClassMetadata')
-            ->willReturn(new ClassMetadata(stdClass::class));
-
-        $args = $this->createMock(OrmPrePersistEventArgs::class);
-        $args->expects($this->once())
-            ->method('getObject')
-            ->willReturn(new stdClass());
-        $args->expects($this->once())
-            ->method('getObjectManager')
-            ->willReturn($objectManager);
-
+        $args = $this->createMock(OdmLifecycleEventArgs::class);
         $this->subscriber->prePersist($args);
         $this->assertTrue(method_exists($this->subscriber, 'debugFunction'));
     }
