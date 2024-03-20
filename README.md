@@ -10,10 +10,10 @@
             <h3>(c) Denis Puzik <b>scorpion3dd@gmail.com</b></h3>
         </th>
         <th>
-            <img src="/www/back/public/images/readme/3ds.jpg" alt="Logo 3ds">
+            <img src="/public/images/readme/3ds.jpg" alt="Logo 3ds">
         </th>
         <th>
-            <img src="/www/back/public/images/symfony_black_02.svg" alt="Logo symfony">
+            <img src="/public/images/symfony_black_02.svg" alt="Logo symfony">
         </th>
   </tr>
 </table>
@@ -425,7 +425,7 @@ every hour in the database MySql.
 
 `Logs` of these executions can be viewed in the table `logs` in the database MySql:
 
-![MySql Logs](/www/back/public/images/readme/mysql_logs.jpg)
+![MySql Logs](/public/images/readme/mysql_logs.jpg)
 
 
 ### ACCESS INTERFACES
@@ -482,57 +482,57 @@ authentication in the application, with next credentials:
 - login: **admin1**
 - password: **admin1**
 
-![Login](/www/back/public/images/readme/login.jpg)
+![Login](/public/images/readme/login.jpg)
 
 Administrator through the admin panel can:
 
 - view `Dashboard` with different analytics information;
 
-![Dashboard](/www/back/public/images/readme/dashboard.jpg)
+![Dashboard](/public/images/readme/dashboard.jpg)
 
 - view, create, edit, delete records with `User` data;
 
-![Users](/www/back/public/images/readme/users.jpg)
+![Users](/public/images/readme/users.jpg)
 
-![User view](/www/back/public/images/readme/user_004.jpg)
+![User view](/public/images/readme/user_004.jpg)
 
-![User view comments](/www/back/public/images/readme/user_005.jpg)
+![User view comments](/public/images/readme/user_005.jpg)
 
-![User create](/www/back/public/images/readme/user_006.jpg)
+![User create](/public/images/readme/user_006.jpg)
 
-![User create](/www/back/public/images/readme/user_007.jpg)
+![User create](/public/images/readme/user_007.jpg)
 
-![User delete](/www/back/public/images/readme/user_008.jpg)
+![User delete](/public/images/readme/user_008.jpg)
 
-![User delete](/www/back/public/images/readme/user_009.jpg)
+![User delete](/public/images/readme/user_009.jpg)
 
 - Search and Filter `users`;
 
-![Users search](/www/back/public/images/readme/user_010.jpg)
+![Users search](/public/images/readme/user_010.jpg)
 
-![Users filter](/www/back/public/images/readme/user_011.jpg)
+![Users filter](/public/images/readme/user_011.jpg)
 
-![Users filter](/www/back/public/images/readme/user_012.jpg)
+![Users filter](/public/images/readme/user_012.jpg)
 
 - Paginate `users`;
 
-![Users paginate](/www/back/public/images/readme/user_013.jpg)
+![Users paginate](/public/images/readme/user_013.jpg)
 
 - Sort `users`;
 
-![Users sort](/www/back/public/images/readme/user_014.jpg)
+![Users sort](/public/images/readme/user_014.jpg)
 
 - change the `status of users` from active to inactive;
 
-![User change the status](/www/back/public/images/readme/user_001.jpg)
+![User change the status](/public/images/readme/user_001.jpg)
 
 - give other `users access` to a very valuable resource.
 
-![User give access](/www/back/public/images/readme/user_002.jpg)
+![User give access](/public/images/readme/user_002.jpg)
 
 - view `comments to user`:
 
-![User view comments](/www/back/public/images/readme/user_003.jpg)
+![User view comments](/public/images/readme/user_003.jpg)
 
 
 When the Administrator changes the user's data, for example, changes the
@@ -568,45 +568,45 @@ authentication in the application, through the admin panel can:
 
 - view, create, edit, remove user access `permissions`;
 
-![Permissions](/www/back/public/images/readme/permissions.jpg)
+![Permissions](/public/images/readme/permissions.jpg)
 
-![Permission view](/www/back/public/images/readme/permission_001.jpg)
+![Permission view](/public/images/readme/permission_001.jpg)
 
-![Permission edit](/www/back/public/images/readme/permission_002.jpg)
+![Permission edit](/public/images/readme/permission_002.jpg)
 
 - Search and Filter, Paginate and Sort `permissions`;
 
-![Permissions search](/www/back/public/images/readme/permission_003.jpg)
+![Permissions search](/public/images/readme/permission_003.jpg)
 
-![Permissions filter](/www/back/public/images/readme/permission_004.jpg)
+![Permissions filter](/public/images/readme/permission_004.jpg)
 
-![Permissions filter](/www/back/public/images/readme/permission_005.jpg)
+![Permissions filter](/public/images/readme/permission_005.jpg)
 
-![Permissions paginate](/www/back/public/images/readme/permission_006.jpg)
+![Permissions paginate](/public/images/readme/permission_006.jpg)
 
-![Permissions sort](/www/back/public/images/readme/permission_007.jpg)
+![Permissions sort](/public/images/readme/permission_007.jpg)
 
 - view, create, edit, delete user `roles`;
 
-![Roles](/www/back/public/images/readme/roles.jpg)
+![Roles](/public/images/readme/roles.jpg)
 
-![Role view](/www/back/public/images/readme/role_002.jpg)
+![Role view](/public/images/readme/role_002.jpg)
 
 - Search and Filter, Paginate and Sort `roles`;
 
-![Roles search](/www/back/public/images/readme/role_003.jpg)
+![Roles search](/public/images/readme/role_003.jpg)
 
-![Roles filter](/www/back/public/images/readme/role_004.jpg)
+![Roles filter](/public/images/readme/role_004.jpg)
 
-![Roles filter](/www/back/public/images/readme/role_005.jpg)
+![Roles filter](/public/images/readme/role_005.jpg)
 
-![Roles paginate](/www/back/public/images/readme/role_006.jpg)
+![Roles paginate](/public/images/readme/role_006.jpg)
 
-![Roles sort](/www/back/public/images/readme/role_007.jpg)
+![Roles sort](/public/images/readme/role_007.jpg)
 
 - make `user roles` hierarchical;
 
-![Role edit](/www/back/public/images/readme/role_001.jpg)
+![Role edit](/public/images/readme/role_001.jpg)
 
 - assign access permissions to `user roles`;
 
@@ -614,19 +614,19 @@ authentication in the application, through the admin panel can:
 
 - view, create, edit, remove user `logs`;
 
-![Logs](/www/back/public/images/readme/logs.jpg)
+![Logs](/public/images/readme/logs.jpg)
 
-![Log view](/www/back/public/images/readme/log_001.jpg)
+![Log view](/public/images/readme/log_001.jpg)
 
-![Log edit](/www/back/public/images/readme/log_002.jpg)
+![Log edit](/public/images/readme/log_002.jpg)
 
 - Filter, Paginate and Sort `logs`;
 
-![Logs filter](/www/back/public/images/readme/log_005.jpg)
+![Logs filter](/public/images/readme/log_005.jpg)
 
-![Logs paginate](/www/back/public/images/readme/log_003.jpg)
+![Logs paginate](/public/images/readme/log_003.jpg)
 
-![Logs sort](/www/back/public/images/readme/log_004.jpg)
+![Logs sort](/public/images/readme/log_004.jpg)
 
 It shows how to:
 
@@ -643,25 +643,25 @@ without user authentication  can:
 - allows to view a `list of active users` with open access to a very
   valuable resource at a given time;
 
-![Lottery main](/www/back/public/images/readme/lottery_001.jpg)
+![Lottery main](/public/images/readme/lottery_001.jpg)
 
 - Filter, Paginate and Sort `Lottery`;
 
-![Lottery filter](/www/back/public/images/readme/lottery_007.jpg)
+![Lottery filter](/public/images/readme/lottery_007.jpg)
 
-![Lottery paginate](/www/back/public/images/readme/lottery_008.jpg)
+![Lottery paginate](/public/images/readme/lottery_008.jpg)
 
-![Lottery sort](/www/back/public/images/readme/lottery_009.jpg)
+![Lottery sort](/public/images/readme/lottery_009.jpg)
 
 - view a `detail info about of active user with comments` with open access to a very
   valuable resource at a given time;
 
-![Lottery user detail info](/www/back/public/images/readme/lottery_010.jpg)
-![Lottery user detail info comment](/www/back/public/images/readme/lottery_011.jpg)
+![Lottery user detail info](/public/images/readme/lottery_010.jpg)
+![Lottery user detail info comment](/public/images/readme/lottery_011.jpg)
 
 - write and add new comment to `user`;
 
-![Lottery user add comment](/www/back/public/images/readme/lottery_012.jpg)
+![Lottery user add comment](/public/images/readme/lottery_012.jpg)
 
 Problems may arise while `checking the form for spam`. If the response from
 the external `Akismet API` takes a long time, our form page will also become
@@ -676,7 +676,7 @@ Therefore, after sending a comment, it is not immediately displayed to all
 users, notify users directly in the browser that their comments are reviewed
 after they are submitted:
 
-![Lottery user add comment message](/www/back/public/images/readme/lottery_013.jpg)
+![Lottery user add comment message](/public/images/readme/lottery_013.jpg)
 
 And as an addition, a beautiful notification will appear at the top of the site
 if an error occurs when filling out the form.
@@ -718,7 +718,7 @@ composer messenger-consume-async-d
 
 Requires checking for spam, `automatically background in console`:
 
-![Lottery messenger-consume-async](/www/back/public/images/readme/lottery_015.jpg)
+![Lottery messenger-consume-async](/public/images/readme/lottery_015.jpg)
 
 Users probably don't realize that the comment is being reviewed and is therefore
 not published immediately. For this reason, they may resend it thinking there
@@ -750,9 +750,9 @@ example in `Slack`.
 If post a comment containing the word `great` and see that comment
 in `Slack chat`:
 
-![Lottery user comment slack](/www/back/public/images/readme/lottery_016.jpg)
+![Lottery user comment slack](/public/images/readme/lottery_016.jpg)
 
-![Lottery user comment email](/www/back/public/images/readme/lottery_021.jpg)
+![Lottery user comment email](/public/images/readme/lottery_021.jpg)
 
 By analogy with an email, we also changed the standard message design in Slack.
 Wouldn't it be great to approve or reject a comment directly in Slack.
@@ -762,34 +762,34 @@ Once messages are sent to all channels asynchronously, the messages themselves
 cease to depend on each other.
 In Slack message click to button Accept - will be open new page with message:
 
-![Lottery user comment page](/www/back/public/images/readme/lottery_017.jpg)
+![Lottery user comment page](/public/images/readme/lottery_017.jpg)
 
 And, if necessary, manual moderation by the Administrator in the Admin panel:
 
-![Lottery user comment moderation](/www/back/public/images/readme/lottery_014.jpg)
+![Lottery user comment moderation](/public/images/readme/lottery_014.jpg)
 
-![Lottery user comment moderation published](/www/back/public/images/readme/lottery_018.jpg)
+![Lottery user comment moderation published](/public/images/readme/lottery_018.jpg)
 
-![Lottery user comment moderation published](/www/back/public/images/readme/lottery_019.jpg)
+![Lottery user comment moderation published](/public/images/readme/lottery_019.jpg)
 
 And after all this, the comment will appear in the public domain for all users:
 
-![Lottery user comment public](/www/back/public/images/readme/lottery_020.jpg)
+![Lottery user comment public](/public/images/readme/lottery_020.jpg)
 
 The web part of this project consists of a public part with page `About`.
 
-![Lottery about](/www/back/public/images/readme/lottery_002.jpg)
+![Lottery about](/public/images/readme/lottery_002.jpg)
 
 Select `different languages` in the user interface and all services texts
 in pages `translator to selected language`.
 
-![Lottery language](/www/back/public/images/readme/lottery_003.jpg)
+![Lottery language](/public/images/readme/lottery_003.jpg)
 
-![Lottery language French about](/www/back/public/images/readme/lottery_004.jpg)
+![Lottery language French about](/public/images/readme/lottery_004.jpg)
 
-![Lottery language French main](/www/back/public/images/readme/lottery_005.jpg)
+![Lottery language French main](/public/images/readme/lottery_005.jpg)
 
-![Lottery language English main](/www/back/public/images/readme/lottery_006.jpg)
+![Lottery language English main](/public/images/readme/lottery_006.jpg)
 
 
 For great performance application use DB `Redis`, which save data to RAM and
@@ -834,7 +834,7 @@ or
 php bin/console about --ansi
 ~~~~~~
 
-![Console about](/www/back/public/images/readme/console_002.jpg)
+![Console about](/public/images/readme/console_002.jpg)
 
 - view all `list console` commands:
 ~~~~~~bush
@@ -845,7 +845,7 @@ or
 php bin/console list --ansi
 ~~~~~~
 
-![Console list](/www/back/public/images/readme/console_001.jpg)
+![Console list](/public/images/readme/console_001.jpg)
 
 - view all `list routers` commands:
 ~~~~~~bush
@@ -856,7 +856,7 @@ or
 php bin/console debug:router --ansi
 ~~~~~~
 
-![Console routers](/www/back/public/images/readme/console_003.jpg)
+![Console routers](/public/images/readme/console_003.jpg)
 
 - run `messenger consume async` commands:
 ~~~~~~bush
@@ -867,7 +867,7 @@ or
 symfony console messenger:consume async -vv --ansi
 ~~~~~~
 
-![Console messenger consume async](/www/back/public/images/readme/console_004.jpg)
+![Console messenger consume async](/public/images/readme/console_004.jpg)
 
 - view all `messenger list handlers` commands:
 ~~~~~~bush
@@ -878,7 +878,7 @@ or
 php bin/console debug:messenger --ansi
 ~~~~~~
 
-![Console messenger list handlers](/www/back/public/images/readme/console_005.jpg)
+![Console messenger list handlers](/public/images/readme/console_005.jpg)
 
 - run `messenger users create faker user` commands:
 ~~~~~~bush
@@ -889,7 +889,7 @@ or
 php bin/console app:users:create-faker-user --ansi
 ~~~~~~
 
-![Console messenger users create faker user](/www/back/public/images/readme/console_006.jpg)
+![Console messenger users create faker user](/public/images/readme/console_006.jpg)
 
 - run `messenger comment message` commands:
 ~~~~~~bush
@@ -900,9 +900,9 @@ or
 php bin/console app:comment:message --ansi
 ~~~~~~
 
-![Console messenger comment message](/www/back/public/images/readme/console_007.jpg)
+![Console messenger comment message](/public/images/readme/console_007.jpg)
 
-![Console messenger comment message](/www/back/public/images/readme/console_008.jpg)
+![Console messenger comment message](/public/images/readme/console_008.jpg)
 
 - run `users find user by email async` commands:
 ~~~~~~bush
@@ -913,7 +913,7 @@ or
 symfony console app:users:find-user-by-email-async --ansi
 ~~~~~~
 
-![Console users find user by email async](/www/back/public/images/readme/console_009.jpg)
+![Console users find user by email async](/public/images/readme/console_009.jpg)
 
 - run `users find user by email sync` commands:
 ~~~~~~bush
@@ -924,7 +924,7 @@ or
 symfony console app:users:find-user-by-email-sync --ansi
 ~~~~~~
 
-![Console users find user by email sync](/www/back/public/images/readme/console_010.jpg)
+![Console users find user by email sync](/public/images/readme/console_010.jpg)
 
 - run `comment cleanup` commands:
 ~~~~~~bush
@@ -935,7 +935,7 @@ or
 symfony console app:comment:cleanup --ansi
 ~~~~~~
 
-![Console comment cleanup](/www/back/public/images/readme/console_011.jpg)
+![Console comment cleanup](/public/images/readme/console_011.jpg)
 
 ### REST API
 
@@ -968,25 +968,25 @@ or
 php bin/console api:openapi:export --output=./var/api/swagger_docs.json --ansi
 ~~~~~~
 
-![Console openapi export](/www/back/public/images/readme/console_012.jpg)
+![Console openapi export](/public/images/readme/console_012.jpg)
 
 View automatically generates `API documentation` in web:
 
-![API platform](/www/back/public/images/readme/api_platform_001.jpg)
+![API platform](/public/images/readme/api_platform_001.jpg)
 
-![API platform](/www/back/public/images/readme/api_platform_002.jpg)
+![API platform](/public/images/readme/api_platform_002.jpg)
 
-![API platform](/www/back/public/images/readme/api_platform_003.jpg)
+![API platform](/public/images/readme/api_platform_003.jpg)
 
-![API platform](/www/back/public/images/readme/api_platform_004.jpg)
+![API platform](/public/images/readme/api_platform_004.jpg)
 
-![API platform](/www/back/public/images/readme/api_platform_005.jpg)
+![API platform](/public/images/readme/api_platform_005.jpg)
 
 For example `API documentation` for route `GET /api/admins`:
 
-![API platform admins](/www/back/public/images/readme/api_platform_006.jpg)
+![API platform admins](/public/images/readme/api_platform_006.jpg)
 
-![API platform admins](/www/back/public/images/readme/api_platform_007.jpg)
+![API platform admins](/public/images/readme/api_platform_007.jpg)
 
 For example execute project `REST API` routes:
 
@@ -997,13 +997,13 @@ POST /api/login
 
 Request:
 
-![REST API login](/www/back/public/images/readme/api_001.jpg)
+![REST API login](/public/images/readme/api_001.jpg)
 
 Result get response:
 
-![REST API login](/www/back/public/images/readme/api_002.jpg)
+![REST API login](/public/images/readme/api_002.jpg)
 
-![REST API login](/www/back/public/images/readme/api_003.jpg)
+![REST API login](/public/images/readme/api_003.jpg)
 
 - view `admins` API route:
 ~~~~~~bush
@@ -1012,15 +1012,15 @@ GET /api/admins
 
 Request:
 
-![REST API admins](/www/back/public/images/readme/api_004.jpg)
+![REST API admins](/public/images/readme/api_004.jpg)
 
 Result get response:
 
-![REST API admins](/www/back/public/images/readme/api_005.jpg)
+![REST API admins](/public/images/readme/api_005.jpg)
 
-![REST API admins](/www/back/public/images/readme/api_006.jpg)
+![REST API admins](/public/images/readme/api_006.jpg)
 
-![REST API admins](/www/back/public/images/readme/api_007.jpg)
+![REST API admins](/public/images/readme/api_007.jpg)
 
 - view `users lottery` API route:
 ~~~~~~bush
@@ -1029,17 +1029,17 @@ GET /api/users/lottery
 
 Request:
 
-![REST API users lottery](/www/back/public/images/readme/api_008.jpg)
+![REST API users lottery](/public/images/readme/api_008.jpg)
 
 Result get response:
 
-![REST API users lottery](/www/back/public/images/readme/api_009.jpg)
+![REST API users lottery](/public/images/readme/api_009.jpg)
 
-![REST API users lottery](/www/back/public/images/readme/api_010.jpg)
+![REST API users lottery](/public/images/readme/api_010.jpg)
 
-![REST API users lottery](/www/back/public/images/readme/api_011.jpg)
+![REST API users lottery](/public/images/readme/api_011.jpg)
 
-![REST API users lottery](/www/back/public/images/readme/api_012.jpg)
+![REST API users lottery](/public/images/readme/api_012.jpg)
 
 - create `user` API route:
 ~~~~~~bush
@@ -1048,13 +1048,13 @@ POST /api/users/lottery
 
 Request:
 
-![REST API users create](/www/back/public/images/readme/api_013.jpg)
+![REST API users create](/public/images/readme/api_013.jpg)
 
 Result get response:
 
-![REST API users create](/www/back/public/images/readme/api_014.jpg)
+![REST API users create](/public/images/readme/api_014.jpg)
 
-![REST API users create](/www/back/public/images/readme/api_015.jpg)
+![REST API users create](/public/images/readme/api_015.jpg)
 
 - add `user comment with upload file picture` API route:
 ~~~~~~bush
@@ -1063,13 +1063,13 @@ POST /api/comments/upload
 
 Request:
 
-![REST API users comment upload](/www/back/public/images/readme/api_016.jpg)
+![REST API users comment upload](/public/images/readme/api_016.jpg)
 
 Result get response:
 
-![REST API users comment upload](/www/back/public/images/readme/api_017.jpg)
+![REST API users comment upload](/public/images/readme/api_017.jpg)
 
-![REST API users comment upload](/www/back/public/images/readme/api_018.jpg)
+![REST API users comment upload](/public/images/readme/api_018.jpg)
 
 ### SPA
 
@@ -1241,7 +1241,7 @@ Explicit architecture helps create a clearer and more maintainable application
 because developers can easily understand which components are responsible for
 which functions and how they interact with each other.
 
-![Lottery main](/www/back/public/images/readme/ExplicitArchitecture.png)
+![Lottery main](/public/images/readme/ExplicitArchitecture.png)
 
 `Concept`:
 
@@ -2393,15 +2393,15 @@ application, simplify its maintenance, and improve data integrity.
 The `Database diagram`, table structure, relationships between tables is
 shown below:
 
-![Database diagram](/www/back/public/images/readme/db_diagrams.png)
+![Database diagram](/public/images/readme/db_diagrams.png)
 
 Procedures and functions in Database:
 
-![Database functions](/www/back/public/images/readme/db_functions.jpg)
+![Database functions](/public/images/readme/db_functions.jpg)
 
 Events in Database:
 
-![Database events](/www/back/public/images/readme/db_events.jpg)
+![Database events](/public/images/readme/db_events.jpg)
 
 Some tables have triggers that automatically perform auxiliary operations,
 such as logging all performed data write/modify/delete operations.
@@ -2675,7 +2675,7 @@ Here are some advantages of using MongoDB:
 
 The Database collection `logs` structure:
 
-![Mongodb logs](/www/back/public/images/readme/mongodb_logs.jpg)
+![Mongodb logs](/public/images/readme/mongodb_logs.jpg)
 
 ##### DB REDIS
 
@@ -2732,7 +2732,7 @@ keys "*"
 
 The Database `lists` structure:
 
-![Redis lists](/www/back/public/images/readme/redis_list.jpg)
+![Redis lists](/public/images/readme/redis_list.jpg)
 
 #### PROGRAMMATIC MESSAGE BROKER
 
@@ -2874,28 +2874,28 @@ providing several advantages:
 tail -n 100 -f /var/log/dev-2024-02-29.log
 ```
 
-![Log php](/www/back/public/images/readme/log_php.jpg)
+![Log php](/public/images/readme/log_php.jpg)
 
 2. in MongoDB `learn` collection `logs`, example run next query:
 ```bash
 db.getCollection('logs').find({priority:100, timestamp:{$gte:ISODate("2023-01-24"),$lt:ISODate("2023-02-24")}});
 ```
 
-![Log MongoDB](/www/back/public/images/readme/log_mongo.jpg)
+![Log MongoDB](/public/images/readme/log_mongo.jpg)
 
 3. in MySql DB `learn` tables: `logs` - for all logs in application,
    `user_log` and `user_role_log` - only for logs from table `user` and `user_role`
 
-![Log MySql logs](/www/back/public/images/readme/log_mysql_logs.jpg)
+![Log MySql logs](/public/images/readme/log_mysql_logs.jpg)
 
-![Log MySql user_log](/www/back/public/images/readme/log_mysql_user_log.jpg)
+![Log MySql user_log](/public/images/readme/log_mysql_user_log.jpg)
 
 4. in Redis DB read log file, example in console run next commands:
 ```bash
 tail -n 100 -f /var/log/redis/redis.log
 ```
 
-![Log redis](/www/back/public/images/readme/log_redis.jpg)
+![Log redis](/public/images/readme/log_redis.jpg)
 
 #### PHP STANDARDS RECOMMENDATIONS (PSR)
 
@@ -3629,7 +3629,7 @@ or
 composer check-cs-coverage
 ```
 
-![phpcs](/www/back/public/images/readme/phpcs.jpg)
+![phpcs](/public/images/readme/phpcs.jpg)
 
 The handler for automatic code style fixing errors with `phpcs` can be executed by running:
 ```bash
@@ -3651,7 +3651,7 @@ or
 phpstan analyse --level=7 --memory-limit=1024M --xdebug
 ```
 
-![phpstan](/www/back/public/images/readme/phpstan.jpg)
+![phpstan](/public/images/readme/phpstan.jpg)
 
 ##### AUTOMATIC CODE STATIC PSALM ANALYSIS
 
@@ -3668,7 +3668,7 @@ or
 vendor/bin/psalm
 ```
 
-![psalm](/www/back/public/images/readme/psalm.jpg)
+![psalm](/public/images/readme/psalm.jpg)
 
 ##### AUTOMATIC CODE STATIC PHPMD ANALYSIS
 
@@ -3685,7 +3685,7 @@ or
 vendor/bin/phpmd src/ text phpmd_ruleset.xml --suffixes php,phtml.twig --strict --color
 ```
 
-![phpmd](/www/back/public/images/readme/phpmd.jpg)
+![phpmd](/public/images/readme/phpmd.jpg)
 
 #### AUTOMATIC TESTS CHECKER
 
@@ -3855,32 +3855,32 @@ or
 php bin/phpunit --testsuite=Unit --colors=always  --coverage-html ./var/check/tests/unit
 ```
 
-![phpunit_unit](/www/back/public/images/readme/phpunit_unit.jpg)
+![phpunit_unit](/public/images/readme/phpunit_unit.jpg)
 
 Running all PHP Unit Admin Tests with coverage in HTML-format:
 ```bash
 composer check-phpunit-unit-admin-coverage-html
 ```
 
-![phpunit_unit admin](/www/back/public/images/readme/phpunit_unit_admin.jpg)
+![phpunit_unit admin](/public/images/readme/phpunit_unit_admin.jpg)
 
 Running all PHP Unit Admin Form Tests with coverage in HTML-format:
 ```bash
 composer check-phpunit-unit-admin-form-coverage-html
 ```
 
-![phpunit_unit admin form](/www/back/public/images/readme/phpunit_unit_admin_form.jpg)
+![phpunit_unit admin form](/public/images/readme/phpunit_unit_admin_form.jpg)
 
 View Web Dashboard PHP Unit tests coverage code in this project:
 
-![phpunit_unit coverage](/www/back/public/images/readme/phpunit_unit_coverage1.jpg)
-![phpunit_unit coverage](/www/back/public/images/readme/phpunit_unit_coverage2.jpg)
-![phpunit_unit coverage](/www/back/public/images/readme/phpunit_unit_coverage2_1.jpg)
-![phpunit_unit coverage](/www/back/public/images/readme/phpunit_unit_coverage2_2.jpg)
+![phpunit_unit coverage](/public/images/readme/phpunit_unit_coverage1.jpg)
+![phpunit_unit coverage](/public/images/readme/phpunit_unit_coverage2.jpg)
+![phpunit_unit coverage](/public/images/readme/phpunit_unit_coverage2_1.jpg)
+![phpunit_unit coverage](/public/images/readme/phpunit_unit_coverage2_2.jpg)
 
-![phpunit_unit coverage](/www/back/public/images/readme/phpunit_unit_coverage3.jpg)
-![phpunit_unit coverage](/www/back/public/images/readme/phpunit_unit_coverage4.jpg)
-![phpunit_unit coverage](/www/back/public/images/readme/phpunit_unit_coverage5.jpg)
+![phpunit_unit coverage](/public/images/readme/phpunit_unit_coverage3.jpg)
+![phpunit_unit coverage](/public/images/readme/phpunit_unit_coverage4.jpg)
+![phpunit_unit coverage](/public/images/readme/phpunit_unit_coverage5.jpg)
 
 ##### PHP INTEGRATION TESTS
 
@@ -3908,15 +3908,15 @@ or
 php bin/phpunit --testsuite=Integration --colors=always  --coverage-html ./var/check/tests/integration
 ```
 
-![phpunit_integration](/www/back/public/images/readme/phpunit_integration.jpg)
+![phpunit_integration](/public/images/readme/phpunit_integration.jpg)
 
 View Web Dashboard PHP Integration tests coverage code in this project:
 
-![phpunit_integrationt coverage](/www/back/public/images/readme/phpunit_integration_coverage1.jpg)
-![phpunit_integrationt coverage](/www/back/public/images/readme/phpunit_integration_coverage2.jpg)
-![phpunit_integrationt coverage](/www/back/public/images/readme/phpunit_integration_coverage3.jpg)
-![phpunit_integrationt coverage](/www/back/public/images/readme/phpunit_integration_coverage4.jpg)
-![phpunit_integrationt coverage](/www/back/public/images/readme/phpunit_integration_coverage5.jpg)
+![phpunit_integrationt coverage](/public/images/readme/phpunit_integration_coverage1.jpg)
+![phpunit_integrationt coverage](/public/images/readme/phpunit_integration_coverage2.jpg)
+![phpunit_integrationt coverage](/public/images/readme/phpunit_integration_coverage3.jpg)
+![phpunit_integrationt coverage](/public/images/readme/phpunit_integration_coverage4.jpg)
+![phpunit_integrationt coverage](/public/images/readme/phpunit_integration_coverage5.jpg)
 
 ##### PHP FUNCTIONAL TESTS
 
@@ -3943,13 +3943,13 @@ or
 php bin/phpunit --testsuite=Functional --colors=always  --coverage-html ./var/check/tests/functional
 ```
 
-![phpunit_functional](/www/back/public/images/readme/phpunit_functional.jpg)
+![phpunit_functional](/public/images/readme/phpunit_functional.jpg)
 
 View Web Dashboard PHP Functional tests coverage code in this project:
 
-![phpunit_functional coverage](/www/back/public/images/readme/phpunit_functional_coverage1.jpg)
-![phpunit_functional coverage](/www/back/public/images/readme/phpunit_functional_coverage2.jpg)
-![phpunit_functional coverage](/www/back/public/images/readme/phpunit_functional_coverage3.jpg)
+![phpunit_functional coverage](/public/images/readme/phpunit_functional_coverage1.jpg)
+![phpunit_functional coverage](/public/images/readme/phpunit_functional_coverage2.jpg)
+![phpunit_functional coverage](/public/images/readme/phpunit_functional_coverage3.jpg)
 
 ##### PHP UNIT, INTEGRATION AND FUNCTIONAL TESTS
 
@@ -3982,7 +3982,7 @@ The `Clean as Code` approach uses quality gate to alert/inform when thereвЂ™
 something to fix or review in new code (code that has been added or changed),
 allowing to maintain high standards and focus on code quality.
 
-![sonar_01](/www/back/public/images/readme/sonar_01.jpg)
+![sonar_01](/public/images/readme/sonar_01.jpg)
 
 The Sonar solution performs checks at every stage of the development process:
 
@@ -4012,7 +4012,7 @@ Organizations start off with a default set of rules and metrics called the Sonar
 requirements. Issues raised in the analysis are compared against the conditions defined
 in the quality profile to establish quality gate.
 
-![sonar_02](/www/back/public/images/readme/sonar_02.jpg)
+![sonar_02](/public/images/readme/sonar_02.jpg)
 
 
 A `quality gate` is an indicator of code quality that can be configured to give a go/no-go
@@ -4034,7 +4034,7 @@ With the Clean as You Code approach, Quality gate should:
   If a project doesn't meet these high standards, it won't pass the quality gate,
   and is therefore not ready to be released.
 
-![sonar_03](/www/back/public/images/readme/sonar_03.jpg)
+![sonar_03](/public/images/readme/sonar_03.jpg)
 
 You can use `pull request analysis` and `pull request decoration` to make sure that code meets
 standards before merging. Pull request analysis lets see pull request's quality
@@ -4057,7 +4057,7 @@ code is clean and passes the quality gate.
 composer sonar-scanner
 ```
 
-![sonar scanner](/www/back/public/images/readme/sonar_05.jpg)
+![sonar scanner](/public/images/readme/sonar_05.jpg)
 
 
 ---
