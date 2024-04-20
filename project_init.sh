@@ -14,7 +14,7 @@
 echo 'copy files:'
 cp .env.dist .env
 cp .env.test.dist .env.test
-cp bitbucket-pipelines.yml.dist bitbucket-pipelines.yml
+#cp bitbucket-pipelines.yml.dist bitbucket-pipelines.yml
 cp phpcs.xml.dist phpcs.xml
 cp phpmd_ruleset.xml.dist phpmd_ruleset.xml
 cp phpstan.neon.dist phpstan.neon

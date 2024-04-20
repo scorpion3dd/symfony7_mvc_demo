@@ -137,8 +137,28 @@
             "node -v"
         ],
         "symfony-npm-ci": "symfony run npm ci --ansi",
-        "symfony-npm-run-dev": "symfony run npm run dev --ansi",
+        "symfony-npm-run-dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "symfony run npm run dev --ansi"
+        ],
         "symfony-npm-run-dev-d": "symfony run -d npm run watch --ansi",
+
+        "jenkins-npm-cache-clean-force": [
+            "Composer\\Config::disableProcessTimeout",
+            "npm cache clean --force"
+        ],
+        "jenkins-npm-install-all": [
+            "Composer\\Config::disableProcessTimeout",
+            "npm install sass node-sass sass-loader bootstrap @popperjs/core bs-custom-file-input --save-dev --cache /var/jenkins_home/.npm --ansi"
+        ],
+        "jenkins-npm-audit-fix": [
+            "Composer\\Config::disableProcessTimeout",
+            "npm audit fix --cache /var/jenkins_home/.npm --ansi"
+        ],
+        "jenkins-symfony-npm-ci": [
+            "Composer\\Config::disableProcessTimeout",
+            "symfony run npm ci --cache /var/jenkins_home/.npm --ansi"
+        ],
 
         "outdated": "@outdated",
         "console-about": "php bin/console about --ansi",
@@ -443,6 +463,12 @@
             "@db-migrate-test",
             "@doctrine-mongodb-fixtures-load-test",
             "@doctrine-db-fixtures-load-test"
+        ],
+
+        "jenkins-project-create-test": [
+            "@db-migrate-test",
+            "symfony console doctrine:mongodb:fixtures:load --no-interaction --env=test --ansi",
+            "symfony console doctrine:fixtures:load --no-interaction --env=test --ansi"
         ],
 
         "db-refresh-test": [
