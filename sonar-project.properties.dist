@@ -13,13 +13,14 @@
 # --- optional properties ---
 
 # defaults to project key
-sonar.projectKey=DemoSymfonyMvcFreeLotteryApplication
-sonar.projectName=Simple Web Demo Free Lottery Management Application on Symfony MVC Framework
+sonar.projectKey=Demo-Symfony-7
+sonar.projectName=Demo Symfony 7
 sonar.Description=The Simple web demo "Free Lottery" management application project on Symfony MVC Framework is a demo
-sonar.links.homepage=http://symfony6.learn.os
-sonar.links.scm=https://bitbucket.org/3dscorpion7/docker-symfony6-learn/src/master/
+sonar.links.homepage=http://localhost:81
+sonar.links.scm=https://github.com/scorpion3dd/symfony7_mvc_demo
 
-sonar.login=squ_466dd9d46b9f10df4ece708218f591b4fd7358bf
+sonar.host.url=http://sonarqube:9000
+sonar.token=sqp_b821ebf4930dfea07b20046bf8ba690e5d09d1c5
 
 # defaults to 'not provided'
 sonar.projectVersion=1.0
@@ -30,15 +31,16 @@ sonar.tests=tests
 
 sonar.language=php
 sonar.dynamicAnalysis=false
+sonar.verbose=true
 
 # Encoding of the source code. Default is default system encoding
 sonar.sourceEncoding=UTF-8
 
-sonar.php.coverage.reportPaths = var/check/tests/unit/phpunit.clover.xml
-sonar.php.tests.reportPath = var/check/tests/unit/phpunit.results.xml
+sonar.php.coverage.reportPaths=var/check/tests/unit/phpunit.clover.xml
+sonar.php.tests.reportPath=var/check/tests/unit/phpunit.results.xml
 
-sonar.test = tests/*
-sonar.php.phpstan.reportPaths = var/check/stan/phpstan.json
+sonar.test=tests/*
+sonar.php.phpstan.reportPaths=var/check/stan/phpstan.json
 
-sonar.exclusions = tests/*
+sonar.exclusions=tests/*
 sonar.inclusions=**/*.php

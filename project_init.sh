@@ -11,6 +11,10 @@
 # @author Denis Puzik <scorpion3dd@gmail.com>
 # @copyright Copyright (c) 2023-2024 scorpion3dd
 
+echo "Current directory: $(pwd)"
+echo "Contents of current directory:"
+ls -la
+
 echo 'copy files:'
 cp .env.dist .env
 cp .env.test.dist .env.test
