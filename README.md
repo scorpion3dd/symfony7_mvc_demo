@@ -81,7 +81,16 @@ to improve the product.
   traditional approaches. As a developer, focus on maintaining high standards and taking responsibility
   specifically in the new code working on. `SonarQube` gives the tools to set high standards and take
   pride in knowing that code meets those standards.
-- `optimal automated process for releasing software releases` use the principle of `CI / CD` in `Bitbucket
+- Using `containerization`, an operating system virtualization method that allows applications to run and
+  work in isolated environments called containers.
+- `Containerization` is a popular approach in software development due to its efficiency, convenience,
+  and portability, allowing developers and operations professionals to efficiently manage
+  applications and infrastructure.
+- `Containers` - package an application along with everything necessary for its operation: code, dependencies,
+  libraries and settings, providing a reliable and portable runtime environment.
+- Using a `Makefile` in a project helps speed up development, makes it easier to maintain, and makes
+  your code more portable, making it an important tool in a software developer's toolkit.
+- `optimal automated process for releasing software releases` use the principle of `CI / CD` in `Jenkins` and `Bitbucket
   Pipelines` use an integrated CI/CD service built into Bitbucket, which allows to `automatically build, test,
   and even deploy code` based on a configuration file in repository, in `Docker containers in the Cloud`.
 - the application uses `advanced measures and solutions to ensure the security` of the application itself,
@@ -3378,6 +3387,30 @@ Integrating Symfony with Jenkins is usually done through setting up a
 Jenkins Job or Pipeline, which runs the necessary Symfony commands to
 build, test, and deploy the application.
 
+![Jenkins 001](/public/images/readme/jenkins_001.jpg)
+
+![Jenkins 002](/public/images/readme/jenkins_002.jpg)
+
+![Jenkins 003](/public/images/readme/jenkins_003.jpg)
+
+![Jenkins 004](/public/images/readme/jenkins_004.jpg)
+
+![Jenkins 005](/public/images/readme/jenkins_005.jpg)
+
+![Jenkins 006](/public/images/readme/jenkins_006.jpg)
+
+![Jenkins 007](/public/images/readme/jenkins_007.jpg)
+
+![Jenkins 008](/public/images/readme/jenkins_008.jpg)
+
+![Jenkins 009](/public/images/readme/jenkins_009.jpg)
+
+![Jenkins 010](/public/images/readme/jenkins_010.jpg)
+
+![Jenkins 011](/public/images/readme/jenkins_011.jpg)
+
+![Jenkins 012](/public/images/readme/jenkins_012.jpg)
+
 #### BITBUCKET PIPELINES AUTOMATION
 
 ##### ADVANTAGES
@@ -3569,6 +3602,48 @@ environment is named "symfony" so will pass that value to `docker-compose run`:
 ```bash
 $ docker-compose run symfony composer install
 ```
+
+##### PORTAINER
+
+Portainer is a great tool for managing Docker containers.
+
+Here are some of its advantages:
+
+* `Easy to Use`: Portainer provides an intuitive web interface that makes it easy to manage containers,
+  images, networks and volumes.
+* `Multiple Host Management`: You can manage multiple Docker hosts from a single instance of Portainer,
+  making it a great tool for deploying and managing containers in multi-host environments.
+* `Monitoring and Logs`: Portainer provides the ability to monitor the health of containers, networks
+  and volumes, as well as viewing container logs directly from the interface.
+* `Manage Stacks and Applications`: With Portainer, you can easily create, manage, and scale stacks and
+  applications using docker-compose.yml files.
+* `Authentication and Authorization`: Portainer supports various authentication and authorization methods,
+  including local accounts, LDAP, OAuth and others.
+* `Open Source`: Portainer is an open source project, which means you can freely use, modify and redistribute
+  it under its license.
+* `Community and Support`: Portainer has an active community of users and developers, ready to help solve
+  problems and provide tips on use.
+
+These benefits make Portainer an excellent choice for managing Docker containers in a variety of environments,
+from local development to productive use across large networks.
+
+![Portainer 001](/public/images/readme/portainer_001.jpg)
+
+![Portainer 002](/public/images/readme/portainer_002.jpg)
+
+![Portainer 003](/public/images/readme/portainer_003.jpg)
+
+![Portainer 004](/public/images/readme/portainer_004.jpg)
+
+![Portainer 005](/public/images/readme/portainer_005.jpg)
+
+![Portainer 006](/public/images/readme/portainer_006.jpg)
+
+![Portainer 007](/public/images/readme/portainer_007.jpg)
+
+![Portainer 008](/public/images/readme/portainer_008.jpg)
+
+![Portainer 009](/public/images/readme/portainer_009.jpg)
 
 ### QA TOOLS
 
@@ -4058,6 +4133,12 @@ composer sonar-scanner
 ```
 
 ![sonar scanner](/public/images/readme/sonar_05.jpg)
+
+![sonar scanner](/public/images/readme/sonar_06.jpg)
+
+![sonar scanner](/public/images/readme/sonar_07.jpg)
+
+![sonar scanner](/public/images/readme/sonar_08.jpg)
 
 
 ---
