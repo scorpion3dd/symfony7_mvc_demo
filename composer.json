@@ -246,7 +246,7 @@
         ],
         "check-phpunit-unit-coverage": [
             "Composer\\Config::disableProcessTimeout",
-            "php bin/phpunit --testsuite=Unit --colors=always  --coverage-html ./var/check/tests/unit  --coverage-clover ./var/check/tests/unit/phpunit.clover.xml --log-junit ./var/check/tests/unit/phpunit.results.xml"
+            "php bin/phpunit --testsuite=Unit --colors=never  --coverage-html ./var/check/tests/unit  --coverage-clover ./var/check/tests/unit/phpunit.clover.xml --log-junit ./var/check/tests/unit/phpunit.results.xml"
         ],
 
         "check-phpunit-unit-admin-no-coverage": "php bin/phpunit --testsuite=UnitAdmin --colors=always --no-coverage",
@@ -273,7 +273,7 @@
         ],
         "check-phpunit-integration-coverage": [
             "Composer\\Config::disableProcessTimeout",
-            "php bin/phpunit --testsuite=Integration --colors=always  --coverage-html ./var/check/tests/integration  --coverage-clover ./var/check/tests/integration/phpunit.clover.xml --log-junit ./var/check/tests/integration/phpunit.results.xml"
+            "php bin/phpunit --testsuite=Integration --colors=never  --coverage-html ./var/check/tests/integration  --coverage-clover ./var/check/tests/integration/phpunit.clover.xml --log-junit ./var/check/tests/integration/phpunit.results.xml"
         ],
 
 
@@ -291,7 +291,7 @@
         ],
         "check-phpunit-functional-coverage": [
             "Composer\\Config::disableProcessTimeout",
-            "php bin/phpunit --testsuite=Functional --colors=always  --coverage-html ./var/check/tests/functional --coverage-clover ./var/check/tests/functional/phpunit.clover.xml --log-junit ./var/check/tests/functional/phpunit.results.xml"
+            "php bin/phpunit --testsuite=Functional --colors=never  --coverage-html ./var/check/tests/functional --coverage-clover ./var/check/tests/functional/phpunit.clover.xml --log-junit ./var/check/tests/functional/phpunit.results.xml"
         ],
 
 
